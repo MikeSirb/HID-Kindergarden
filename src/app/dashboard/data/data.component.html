@@ -37,5 +37,14 @@
   <tr mat-row *matRowDef="let row; columns: ['name', 'kindergarden', 'address', 'age', 'birthdate', 'actions']"></tr>
 </table>
 
-<button [ngClass]="page == currentPage ? 'active' : ''" (click)="selectPage(page)" type="button"
-        *ngFor="let page of returnAllPages() | pagination ">{{page}}</button>
+<mat-paginator #paginator
+               class="mat-elevation-z8"
+               (page)="handlePageEvent($event)"
+               [pageSize]="CHILDREN_PER_PAGE"
+               [pageIndex]="currentPage"
+               [length]="storeService.childrenTotalCount"
+               [pageSizeOptions]="pageSizeOptions"
+               aria-label="Select page">
+
+</mat-paginator>
+

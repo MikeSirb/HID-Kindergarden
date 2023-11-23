@@ -19,6 +19,7 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {MatButtonModule} from "@angular/material/button";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 @NgModule({
   declarations: [
@@ -45,7 +46,9 @@ import {MatTableModule} from "@angular/material/table";
     MatNativeDateModule,
     MatButtonModule,
     MatDividerModule,
-    MatTableModule
+    MatTableModule,
+    // Pagination
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

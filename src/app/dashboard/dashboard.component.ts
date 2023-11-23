@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
   public isActive = true;
-  public currentPage: number = 1;
+  public currentPage: number = 0;
 
   receiveMessage(newPageCount: number) {
     this.currentPage = newPageCount;
