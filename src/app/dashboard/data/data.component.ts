@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BackendService } from 'src/app/shared/backend.service';
-import { CHILDREN_PER_PAGE } from 'src/app/shared/constants';
 import { StoreService } from 'src/app/shared/store.service';
 import {PageEvent} from "@angular/material/paginator";
+import {ConfigService} from "../../shared/config.service";
 
 @Component({
   selector: 'app-data',
@@ -11,27 +11,15 @@ import {PageEvent} from "@angular/material/paginator";
 })
 export class DataComponent implements OnInit {
 
-  constructor(public storeService: StoreService, private backendService: BackendService) {}
+  constructor(public storeService: StoreService, private backendService: BackendService, private configService: ConfigService) {}
   @Input() currentPage!: number;
   @Output() selectPageEvent = new EventEmitter<number>();
-  public page: number = 0;
-  pageSizeOptions = [2, 4, 5];
-  CHILDREN_PER_PAGE = CHILDREN_PER_PAGE;
+  pageSize: number = 5;
+  pageSizeOptions: number[] = [2, 5, 10, 15];
 
 
   ngOnInit(): void {
     this.backendService.getChildren(this.currentPage);
-  }
-
-  getAge(birthDate: string) {
-    var today = new Date();
-    var birthDateTimestamp = new Date(birthDate);
-    var age = today.getFullYear() - birthDateTimestamp.getFullYear();
-    var m = today.getMonth() - birthDateTimestamp.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDateTimestamp.getDate())) {
-        age--;
-    }
-    return age;
   }
 
   public cancelRegistration(childId: string) {
@@ -40,13 +28,23 @@ export class DataComponent implements OnInit {
 
   handlePageEvent(event: PageEvent) {
 
-    console.log(this.currentPage)
+    this.configService.setChildrenPerPage(event.pageSize);
     this.currentPage = event.pageIndex;
     this.selectPageEvent.emit(this.currentPage)
     this.backendService.getChildren(this.currentPage);
-    console.log(this.currentPage)
   }
 
+
+  getAge(birthDate: string) {
+    var today = new Date();
+    var birthDateTimestamp = new Date(birthDate);
+    var age = today.getFullYear() - birthDateTimestamp.getFullYear();
+    var m = today.getMonth() - birthDateTimestamp.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDateTimestamp.getDate())) {
+      age--;
+    }
+    return age;
+  }
 }
 
 

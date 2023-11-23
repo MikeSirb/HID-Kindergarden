@@ -37,14 +37,14 @@
   <tr mat-row *matRowDef="let row; columns: ['name', 'kindergarden', 'address', 'age', 'birthdate', 'actions']"></tr>
 </table>
 
-<mat-paginator #paginator
+<mat-paginator
                class="mat-elevation-z8"
                (page)="handlePageEvent($event)"
-               [pageSize]="CHILDREN_PER_PAGE"
+               [pageSize]="pageSize"
                [pageIndex]="currentPage"
                [length]="storeService.childrenTotalCount"
                [pageSizeOptions]="pageSizeOptions"
+               [showFirstLastButtons]="true"
                aria-label="Select page">
-
 </mat-paginator>
 
