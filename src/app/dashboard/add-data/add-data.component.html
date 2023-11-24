@@ -28,7 +28,7 @@
   </section>
 
   <div class="alert alert-info" *ngIf="isSubmitted">
-    <p class="fs-5"> Child: <span class="fw-bold">{{ addChildForm.value.name }}</span> has been added!</p>
+    <p class="fs-5">{{ message }}</p>
   </div>
   <app-alert [message]="message" [title]="title" *ngIf="isSubmitted" ></app-alert>
 

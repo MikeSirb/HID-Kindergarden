@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {BackendService} from 'src/app/shared/backend.service';
 import {StoreService} from 'src/app/shared/store.service';
@@ -8,7 +8,7 @@ import {StoreService} from 'src/app/shared/store.service';
   templateUrl: './add-data.component.html',
   styleUrls: ['./add-data.component.scss']
 })
-export class AddDataComponent implements OnInit, AfterViewInit {
+export class AddDataComponent implements OnInit {
 
   @Input() currentPage!: number;
   public addChildForm: any;
@@ -29,8 +29,9 @@ export class AddDataComponent implements OnInit, AfterViewInit {
 
   onSubmit() {
     if (this.addChildForm.valid) {
-      console.log(this.currentPage);
+
       this.backendService.addChildData(this.addChildForm.value, this.currentPage);
+
       this.message = `${this.addChildForm.value.name} : has been enrolled successfully!`
 
       this.isSubmitted = true;
@@ -41,7 +42,4 @@ export class AddDataComponent implements OnInit, AfterViewInit {
     }
   }
 
-  ngAfterViewInit(): void {
-    this.message
-  }
 }
