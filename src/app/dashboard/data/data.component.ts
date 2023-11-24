@@ -34,7 +34,6 @@ export class DataComponent implements OnInit {
     this.backendService.getChildren(this.currentPage);
   }
 
-
   getAge(birthDate: string) {
     var today = new Date();
     var birthDateTimestamp = new Date(birthDate);

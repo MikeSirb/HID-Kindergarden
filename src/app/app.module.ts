@@ -20,15 +20,18 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import {AlertComponent} from "./shared/alert/alert.component";
 
 @NgModule({
   declarations: [
+    // Components
     AppComponent,
     DashboardComponent,
     AddDataComponent,
     DataComponent,
     HeaderComponent,
     ButtonComponent,
+    AlertComponent,
     PaginationPipe
   ],
   imports: [
