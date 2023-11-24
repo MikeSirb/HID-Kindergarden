@@ -4,7 +4,6 @@ import {AfterViewInit, Component, Input} from "@angular/core";
   selector: 'app-alert',
   templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.css']
-
 })
 
 export class AlertComponent implements AfterViewInit {
@@ -19,4 +18,15 @@ export class AlertComponent implements AfterViewInit {
       this.modalDiv.style.display = 'block';
   }
 
+  closeModal() {
+    if (this.modalDiv != null)
+      this.modalDiv.style.display = 'none';
+
+      setTimeout(() => {
+        this.modalDiv!.style.display = 'block';
+      }, 10000);
+
+
+
+  }
 }

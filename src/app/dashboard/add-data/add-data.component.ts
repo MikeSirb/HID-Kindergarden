@@ -37,7 +37,7 @@ export class AddDataComponent implements OnInit {
       this.isSubmitted = true;
       setTimeout(() => {
         this.isSubmitted = false;
-      }, 7000)
+      }, 10000)
 
     }
   }
