@@ -1,4 +1,4 @@
-<div>
+<div class="container-fluid">
   <section>
     <form [formGroup]="addChildForm" (ngSubmit)="onSubmit()">
       <h2>Ihr Kind anmelden!</h2>
@@ -27,7 +27,7 @@
     </form>
   </section>
 
-  <div class="alert alert-info" *ngIf="isSubmitted">
+  <div class="alert alert-info mt-2" *ngIf="isSubmitted">
     <p class="fs-5">{{ message }}</p>
   </div>
   <app-alert [message]="message" [title]="title" *ngIf="isSubmitted" ></app-alert>

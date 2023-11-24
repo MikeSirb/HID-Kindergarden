@@ -1,34 +1,18 @@
-/*
-div {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border: 1px solid  red;
-}
-
-section {
-  height: 90%;
-  width: 20%;
-  border: 1px solid  red;
-  text-align: center;
-}
 
 mat-divider {
   margin-bottom: 1.5rem;
 }
 
 mat-form-field {
-  width: 100%;
+  width: 500px;
+  min-width: 300px;
 }
+
 mat-select {
-  width: 300px;
+  min-width: 300px;
+  max-width: 600px;
 }
 
 mat-option {
-  width: 300px;
 }
-
-*/
 

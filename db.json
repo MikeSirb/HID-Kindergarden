@@ -181,34 +181,16 @@
       "id": "nt8yXzL"
     },
     {
-      "name": "tom gar 30",
-      "kindergardenId": 1,
-      "birthDate": "1992-01-01T00:00:00.000Z",
-      "id": "TVzp67x"
+      "name": "daniel lusa 31",
+      "kindergardenId": 2,
+      "birthDate": "1980-01-10T00:00:00.000Z",
+      "id": "7JJWt1y"
     },
     {
-      "name": "kev 33",
+      "name": "daniel lusa 32",
       "kindergardenId": 2,
-      "birthDate": "1991-03-03T00:00:00.000Z",
-      "id": "uMVRxK-"
-    },
-    {
-      "name": "kev 34",
-      "kindergardenId": 2,
-      "birthDate": "1991-01-01T00:00:00.000Z",
-      "id": "EWoWaaj"
-    },
-    {
-      "name": "john 34",
-      "kindergardenId": 2,
-      "birthDate": "1991-12-01T00:00:00.000Z",
-      "id": "arnnzwR"
-    },
-    {
-      "name": "john 35",
-      "kindergardenId": 2,
-      "birthDate": "1991-01-01T00:00:00.000Z",
-      "id": "-PGj4b4"
+      "birthDate": "1911-01-15T00:00:00.000Z",
+      "id": "RRXQ_Xh"
     }
   ],
   "kindergardens": [
