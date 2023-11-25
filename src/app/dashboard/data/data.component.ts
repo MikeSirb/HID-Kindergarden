@@ -3,7 +3,6 @@ import {BackendService} from 'src/app/shared/backend.service';
 import {StoreService} from 'src/app/shared/store.service';
 import {PageEvent} from "@angular/material/paginator";
 import {ConfigService} from "../../shared/config.service";
-import {Child, ChildResponse} from "../../shared/interfaces/Child";
 
 @Component({
   selector: 'app-data',
@@ -20,7 +19,7 @@ export class DataComponent implements OnInit {
   pageSizeOptions: number[] = [2, 5, 10, 15];
   public message: string = "wurde erfolgreich vom Kindergarten abgemeldet"
   title: string = 'Information zur Abmeldung'
-  isSubmitted: boolean = false;
+  displayAlert: boolean = false;
 
 
   ngOnInit(): void {
@@ -35,14 +34,13 @@ export class DataComponent implements OnInit {
         this.message = `${child.name} wurde erfolgreich vom Kindergarten abgemeldet`;
     });
 
-    this.isSubmitted = true;
+    this.displayAlert = true;
     setTimeout(() => {
-      this.isSubmitted = false;
-    }, 5000)
+      this.displayAlert = false;
+    }, 10000)
   }
 
   handlePageEvent(event: PageEvent) {
-
     this.configService.setChildrenPerPage(event.pageSize);
     this.currentPage = event.pageIndex;
     this.selectPageEvent.emit(this.currentPage)
@@ -58,6 +56,10 @@ export class DataComponent implements OnInit {
       age--;
     }
     return age;
+  }
+
+  closeAlerts(event: boolean) {
+    this.displayAlert = event;
   }
 }
 

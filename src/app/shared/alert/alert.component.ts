@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input} from "@angular/core";
+import {AfterViewInit, Component, EventEmitter, Input, Output} from "@angular/core";
 
 @Component({
   selector: 'app-alert',
@@ -9,6 +9,7 @@ import {AfterViewInit, Component, Input} from "@angular/core";
 export class AlertComponent implements AfterViewInit {
   @Input() message!: string;
   @Input() title!: string;
+  @Output() closeModalEvent = new EventEmitter<boolean>();
 
   public modalDiv: HTMLElement | null = null;
 
@@ -19,12 +20,8 @@ export class AlertComponent implements AfterViewInit {
   }
 
   closeModal() {
-    if (this.modalDiv != null)
-      this.modalDiv.style.display = 'none';
-
-      setTimeout(() => {
-        this.modalDiv!.style.display = 'block';
-      }, 5000);
-
+    if (this.modalDiv != null) {
+      this.closeModalEvent.emit(false);
+    }
   }
 }

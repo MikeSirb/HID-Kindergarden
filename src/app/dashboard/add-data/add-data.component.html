@@ -7,7 +7,7 @@
   <mat-divider></mat-divider>
 
   <mat-form-field>
-    <input matInput [matDatepicker]="picker" placeholder="Geburtsdatum" type="date" formControlName="birthDate">
+    <input matInput [matDatepicker]="picker" placeholder="MM/DD/YYYY" formControlName="birthDate">
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
@@ -21,10 +21,10 @@
   </mat-form-field>
   <mat-divider></mat-divider>
   <button mat-raised-button color="primary" type="submit">Erfassen</button>
-  <div class="alert alert-info m-2" *ngIf="isSubmitted">
+  <div class="alert alert-info m-2" *ngIf="displayAlert">
     <p class="fs-4">{{ message }}</p>
   </div>
 </form>
 
-<app-alert [message]="message" [title]="title" *ngIf="isSubmitted"></app-alert>
+<app-alert [message]="message" [title]="title" *ngIf="displayAlert" (closeModalEvent)="closeAlerts($event)"></app-alert>
 

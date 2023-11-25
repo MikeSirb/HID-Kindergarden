@@ -61,30 +61,6 @@
       "id": "ip57WMS"
     },
     {
-      "name": "Bastian Witsch",
-      "kindergardenId": 3,
-      "birthDate": "2023-10-13",
-      "id": "hlQAqAD12"
-    },
-    {
-      "name": "Bastian Witsch",
-      "kindergardenId": 3,
-      "birthDate": "2023-10-13",
-      "id": "hlQAqAD13"
-    },
-    {
-      "name": "Bastian Witsch",
-      "kindergardenId": 3,
-      "birthDate": "2023-10-13",
-      "id": "hlQAqAD14"
-    },
-    {
-      "name": "Bastian Witsch",
-      "kindergardenId": 3,
-      "birthDate": "2023-10-13",
-      "id": "hlQAqAD15"
-    },
-    {
       "name": "chuppi",
       "kindergardenId": 1,
       "birthDate": "1991-01-01T00:00:00.000Z",
@@ -97,28 +73,10 @@
       "id": "nDWUScR"
     },
     {
-      "name": "chacha",
-      "kindergardenId": 2,
-      "birthDate": "1991-01-01T00:00:00.000Z",
-      "id": "Sh9k-LC"
-    },
-    {
       "name": "choro",
       "kindergardenId": 2,
       "birthDate": "1991-01-01T00:00:00.000Z",
       "id": "J18lDo_"
-    },
-    {
-      "name": "jimmy",
-      "kindergardenId": 4,
-      "birthDate": "1993-01-01T00:00:00.000Z",
-      "id": "RRK844c"
-    },
-    {
-      "name": "jordel",
-      "kindergardenId": 2,
-      "birthDate": "1995-01-01T00:00:00.000Z",
-      "id": "-oFrA_J"
     },
     {
       "name": "goro",
@@ -137,6 +95,42 @@
       "kindergardenId": 5,
       "birthDate": "1994-05-11T00:00:00.000Z",
       "id": "Gt4JG6F"
+    },
+    {
+      "name": "Mike",
+      "kindergardenId": 3,
+      "birthDate": "1992-01-01T00:00:00.000Z",
+      "id": "4pf-4s5"
+    },
+    {
+      "name": "franzilein",
+      "kindergardenId": 2,
+      "birthDate": "2023-11-15T23:00:00.000Z",
+      "id": "G3umH3F"
+    },
+    {
+      "name": "dev",
+      "kindergardenId": 3,
+      "birthDate": "2023-11-12T23:00:00.000Z",
+      "id": "ng6tN1Y"
+    },
+    {
+      "name": "scöhasdf234234",
+      "kindergardenId": 3,
+      "birthDate": "2023-11-14T23:00:00.000Z",
+      "id": "bynKKMu"
+    },
+    {
+      "name": "asdf",
+      "kindergardenId": 3,
+      "birthDate": "2023-11-07T23:00:00.000Z",
+      "id": "X4M4UpM"
+    },
+    {
+      "name": "sdsd",
+      "kindergardenId": 3,
+      "birthDate": "2023-11-15T23:00:00.000Z",
+      "id": "8sxWai4"
     }
   ],
   "kindergardens": [

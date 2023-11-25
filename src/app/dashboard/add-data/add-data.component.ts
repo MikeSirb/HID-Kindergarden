@@ -12,7 +12,7 @@ export class AddDataComponent implements OnInit {
 
   @Input() currentPage!: number;
   public addChildForm: any;
-  isSubmitted: boolean = false;
+  displayAlert: boolean = false;
   message: string = '';
   title: string = 'Information zur Anmeldung'
 
@@ -29,17 +29,24 @@ export class AddDataComponent implements OnInit {
 
   onSubmit() {
     if (this.addChildForm.valid) {
-
       this.backendService.addChildData(this.addChildForm.value, this.currentPage);
 
       this.message = `${this.addChildForm.value.name} : wurde erfolgreich im Kindergarten angemeldet!`
+      this.displayAlert = true;
+      this.addChildForm.reset(); // not able to remove touched from the form inputs
 
-      this.isSubmitted = true;
       setTimeout(() => {
-        this.isSubmitted = false;
-      }, 5000)
-
+        this.displayAlert = false;
+      }, 10000)
     }
   }
 
+  closeAlerts(event: boolean) {
+    console.log(event);
+    this.displayAlert = event;
+  }
+
+  reset() {
+
+  }
 }
