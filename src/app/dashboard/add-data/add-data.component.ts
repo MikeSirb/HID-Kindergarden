@@ -14,7 +14,7 @@ export class AddDataComponent implements OnInit {
   public addChildForm: any;
   isSubmitted: boolean = false;
   message: string = '';
-  title: string = 'Child enrolled notification'
+  title: string = 'Information zur Anmeldung'
 
   constructor(private formbuilder: FormBuilder, public storeService: StoreService, public backendService: BackendService) {
   }
@@ -32,12 +32,12 @@ export class AddDataComponent implements OnInit {
 
       this.backendService.addChildData(this.addChildForm.value, this.currentPage);
 
-      this.message = `${this.addChildForm.value.name} : has been enrolled successfully!`
+      this.message = `${this.addChildForm.value.name} : wurde erfolgreich im Kindergarten angemeldet!`
 
       this.isSubmitted = true;
       setTimeout(() => {
         this.isSubmitted = false;
-      }, 10000)
+      }, 5000)
 
     }
   }

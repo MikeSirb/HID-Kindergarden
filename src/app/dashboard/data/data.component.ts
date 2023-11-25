@@ -1,8 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { BackendService } from 'src/app/shared/backend.service';
-import { StoreService } from 'src/app/shared/store.service';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {BackendService} from 'src/app/shared/backend.service';
+import {StoreService} from 'src/app/shared/store.service';
 import {PageEvent} from "@angular/material/paginator";
 import {ConfigService} from "../../shared/config.service";
+import {Child, ChildResponse} from "../../shared/interfaces/Child";
 
 @Component({
   selector: 'app-data',
@@ -11,11 +12,15 @@ import {ConfigService} from "../../shared/config.service";
 })
 export class DataComponent implements OnInit {
 
-  constructor(public storeService: StoreService, private backendService: BackendService, public configService: ConfigService) {}
+  constructor(public storeService: StoreService, private backendService: BackendService, public configService: ConfigService) {
+  }
+
   @Input() currentPage!: number;
   @Output() selectPageEvent = new EventEmitter<number>();
-  pageSize: number = 5;
   pageSizeOptions: number[] = [2, 5, 10, 15];
+  public message: string = "wurde erfolgreich vom Kindergarten abgemeldet"
+  title: string = 'Information zur Abmeldung'
+  isSubmitted: boolean = false;
 
 
   ngOnInit(): void {
@@ -24,6 +29,16 @@ export class DataComponent implements OnInit {
 
   public cancelRegistration(childId: string) {
     this.backendService.deleteChildData(childId, this.currentPage);
+
+    this.storeService.children.filter((child) => {
+      if (child.id === childId)
+        this.message = `${child.name} wurde erfolgreich vom Kindergarten abgemeldet`;
+    });
+
+    this.isSubmitted = true;
+    setTimeout(() => {
+      this.isSubmitted = false;
+    }, 5000)
   }
 
   handlePageEvent(event: PageEvent) {

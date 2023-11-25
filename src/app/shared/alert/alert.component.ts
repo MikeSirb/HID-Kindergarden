@@ -24,9 +24,7 @@ export class AlertComponent implements AfterViewInit {
 
       setTimeout(() => {
         this.modalDiv!.style.display = 'block';
-      }, 10000);
-
-
+      }, 5000);
 
   }
 }
