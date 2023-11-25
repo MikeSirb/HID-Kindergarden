@@ -1,115 +1,109 @@
 {
   "childs": [
     {
-      "id": "_iL775j",
-      "name": "Nicole Fitsch 1",
-      "birthDate": "2021-07-04",
-      "kindergardenId": 1
-    },
-    {
       "id": "_ij700m",
-      "name": "Melanie Hollunder 2",
+      "name": "Melanie Hollunder",
       "birthDate": "2020-07-04",
       "kindergardenId": 3
     },
     {
       "id": "_iL77oo",
-      "name": "Viktor Sachs 3",
+      "name": "Viktor Sachs",
       "birthDate": "2022-06-04",
       "kindergardenId": 4
     },
     {
       "id": "_iL790m",
-      "name": "Emily Nilson 4",
+      "name": "Emily Nilson",
       "birthDate": "2019-01-04",
       "kindergardenId": 2
     },
     {
       "id": "_iL790m",
-      "name": "Tom Reiner 5",
+      "name": "Tom Reiner",
       "birthDate": "2019-01-04",
       "kindergardenId": 2
     },
     {
       "id": "_iL790m",
-      "name": "Michael Mittner 6",
+      "name": "Michael Mittner",
       "birthDate": "2019-01-04",
       "kindergardenId": 2
     },
     {
       "id": "_iL790m",
-      "name": "Nikolaus Polarius 7",
+      "name": "Nikolaus Polarius",
       "birthDate": "2019-01-04",
       "kindergardenId": 2
     },
     {
-      "name": "Paulus Fensterl 8",
+      "name": "Paulus Fensterl",
       "kindergardenId": 2,
       "birthDate": "2023-09-28",
       "id": "9py_fwi"
     },
     {
-      "name": "Heidi aus den Bergen 9",
+      "name": "Heidi aus den Bergen",
       "kindergardenId": 2,
       "birthDate": "2023-10-05",
       "id": "hOHEFCv"
     },
     {
-      "name": "Traude Widmann 10",
+      "name": "Traude Widmann",
       "kindergardenId": 2,
       "birthDate": "2023-10-05",
       "id": "cu0_2Ad"
     },
     {
-      "name": "Heiner Kühlschrank 11",
+      "name": "Heiner Kühlschrank",
       "kindergardenId": 2,
       "birthDate": "2023-10-26",
       "id": "ip57WMS"
     },
     {
-      "name": "Bastian Witsch 12",
+      "name": "Bastian Witsch",
       "kindergardenId": 3,
       "birthDate": "2023-10-13",
       "id": "hlQAqAD12"
     },
     {
-      "name": "Bastian Witsch 13",
+      "name": "Bastian Witsch",
       "kindergardenId": 3,
       "birthDate": "2023-10-13",
       "id": "hlQAqAD13"
     },
     {
-      "name": "Bastian Witsch 14",
+      "name": "Bastian Witsch",
       "kindergardenId": 3,
       "birthDate": "2023-10-13",
       "id": "hlQAqAD14"
     },
     {
-      "name": "Bastian Witsch 15",
+      "name": "Bastian Witsch",
       "kindergardenId": 3,
       "birthDate": "2023-10-13",
       "id": "hlQAqAD15"
     },
     {
-      "name": "chuppi 16",
+      "name": "chuppi",
       "kindergardenId": 1,
       "birthDate": "1991-01-01T00:00:00.000Z",
       "id": "jyNU2_Q"
     },
     {
-      "name": "chappi 17",
+      "name": "chappi",
       "kindergardenId": 1,
       "birthDate": "1991-01-01T00:00:00.000Z",
       "id": "nDWUScR"
     },
     {
-      "name": "chacha 18",
+      "name": "chacha",
       "kindergardenId": 2,
       "birthDate": "1991-01-01T00:00:00.000Z",
       "id": "Sh9k-LC"
     },
     {
-      "name": "choro 19",
+      "name": "choro",
       "kindergardenId": 2,
       "birthDate": "1991-01-01T00:00:00.000Z",
       "id": "J18lDo_"
@@ -127,70 +121,52 @@
       "id": "-oFrA_J"
     },
     {
-      "name": "mr diggi 22",
+      "name": "mr diggi",
       "kindergardenId": 1,
       "birthDate": "1991-12-05T00:00:00.000Z",
       "id": "UraB-fY"
     },
     {
-      "name": "goro 23",
+      "name": "goro",
       "kindergardenId": 2,
       "birthDate": "1993-02-02T00:00:00.000Z",
       "id": "Jy3jYqS"
     },
     {
-      "name": "chappi 24",
+      "name": "chappi",
       "kindergardenId": 4,
       "birthDate": "1995-05-05T00:00:00.000Z",
       "id": "rOYQweK"
     },
     {
-      "name": "Child 25",
+      "name": "Child",
       "kindergardenId": 2,
       "birthDate": "1992-02-25T00:00:00.000Z",
       "id": "p2QoEw9"
     },
     {
-      "name": "kevin 26",
+      "name": "kevin",
       "kindergardenId": 2,
       "birthDate": "1003-02-26T00:00:00.000Z",
       "id": "GqIUT_F"
     },
     {
-      "name": "gar 27",
+      "name": "gar",
       "kindergardenId": 2,
       "birthDate": "1993-01-01T00:00:00.000Z",
       "id": "4qQsKya"
     },
     {
-      "name": "jerry 28",
+      "name": "jerry",
       "kindergardenId": 5,
       "birthDate": "1994-02-01T00:00:00.000Z",
       "id": "rzeXLfA"
     },
     {
-      "name": "gatcho 29",
-      "kindergardenId": 2,
-      "birthDate": "1991-01-01T00:00:00.000Z",
-      "id": "tdCk_J_"
-    },
-    {
-      "name": "tom gar 30",
-      "kindergardenId": 1,
-      "birthDate": "1992-01-01T00:00:00.000Z",
-      "id": "nt8yXzL"
-    },
-    {
-      "name": "daniel lusa 31",
-      "kindergardenId": 2,
-      "birthDate": "1980-01-10T00:00:00.000Z",
-      "id": "7JJWt1y"
-    },
-    {
-      "name": "daniel lusa 32",
-      "kindergardenId": 2,
-      "birthDate": "1911-01-15T00:00:00.000Z",
-      "id": "RRXQ_Xh"
+      "name": "Mike King",
+      "kindergardenId": 5,
+      "birthDate": "1994-05-11T00:00:00.000Z",
+      "id": "Gt4JG6F"
     }
   ],
   "kindergardens": [

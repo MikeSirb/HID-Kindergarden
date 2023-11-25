@@ -11,7 +11,7 @@ import {ConfigService} from "../../shared/config.service";
 })
 export class DataComponent implements OnInit {
 
-  constructor(public storeService: StoreService, private backendService: BackendService, private configService: ConfigService) {}
+  constructor(public storeService: StoreService, private backendService: BackendService, public configService: ConfigService) {}
   @Input() currentPage!: number;
   @Output() selectPageEvent = new EventEmitter<number>();
   pageSize: number = 5;
