@@ -22,6 +22,7 @@ import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {AlertComponent} from "./shared/alert/alert.component";
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     MatToolbarModule,
     // Pagination
     MatPaginatorModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -20,10 +20,15 @@
     </mat-select>
   </mat-form-field>
   <mat-divider></mat-divider>
-  <button mat-raised-button color="primary" type="submit">Erfassen</button>
+  <button mat-raised-button color="primary" type="submit">Anmelden</button>
+
+<!-- DIV-Box alert -->
+<!--
   <div class="alert alert-info m-2" *ngIf="displayAlert">
     <p class="fs-4">{{ message }}</p>
   </div>
+  -->
+
 </form>
 
 <app-alert [message]="message" [title]="title" *ngIf="displayAlert" (closeModalEvent)="closeAlerts($event)"></app-alert>

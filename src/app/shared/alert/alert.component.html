@@ -1,3 +1,17 @@
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="myModal">
+  <div class="toast-header">
+    <mat-icon>info</mat-icon>
+    <strong class="px-1 me-auto">{{ title}}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" (click)="closeModal()" aria-label="Close"></button>
+  </div>
+  <div class="toast-body">
+    {{ message }}
+  </div>
+</div>
+
+<!--  MODAL VARIATION  -->
+
+<!--
 <div class="modal" tabindex="-1" id="myModal">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -14,3 +28,4 @@
     </div>
   </div>
 </div>
+-->

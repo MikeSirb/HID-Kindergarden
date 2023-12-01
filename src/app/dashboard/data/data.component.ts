@@ -17,7 +17,7 @@ export class DataComponent implements OnInit {
   @Input() currentPage!: number;
   @Output() selectPageEvent = new EventEmitter<number>();
   pageSizeOptions: number[] = [2, 5, 10, 15];
-  public message: string = "wurde erfolgreich vom Kindergarten abgemeldet"
+  public message: string = ""
   title: string = 'Information zur Abmeldung'
   displayAlert: boolean = false;
 
@@ -31,7 +31,7 @@ export class DataComponent implements OnInit {
 
     this.storeService.children.filter((child) => {
       if (child.id === childId)
-        this.message = `${child.name} wurde erfolgreich vom Kindergarten abgemeldet`;
+        this.message = `${child.name} : wurde erfolgreich vom Kindergarten abgemeldet`;
     });
 
     this.displayAlert = true;

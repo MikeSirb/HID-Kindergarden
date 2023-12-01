@@ -42,11 +42,7 @@ export class AddDataComponent implements OnInit {
   }
 
   closeAlerts(event: boolean) {
-    console.log(event);
     this.displayAlert = event;
   }
 
-  reset() {
-
-  }
 }

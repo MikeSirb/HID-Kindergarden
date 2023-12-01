@@ -54,8 +54,11 @@
                aria-label="Select page">
 </mat-paginator>
 
+<!-- Div-Box alert -->
+<!--
 <div class="alert alert-info m-2" *ngIf="displayAlert">
   <p class="fs-4">{{ message }}</p>
 </div>
+-->
 
 <app-alert [message]="message" [title]="title" *ngIf="displayAlert" (closeModalEvent)="closeAlerts($event)"></app-alert>

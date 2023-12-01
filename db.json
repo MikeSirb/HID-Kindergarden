@@ -14,12 +14,6 @@
     },
     {
       "id": "_iL790m",
-      "name": "Emily Nilson",
-      "birthDate": "2019-01-04",
-      "kindergardenId": 2
-    },
-    {
-      "id": "_iL790m",
       "name": "Tom Reiner",
       "birthDate": "2019-01-04",
       "kindergardenId": 2
@@ -85,52 +79,28 @@
       "id": "Jy3jYqS"
     },
     {
-      "name": "jerry",
-      "kindergardenId": 5,
-      "birthDate": "1994-02-01T00:00:00.000Z",
-      "id": "rzeXLfA"
-    },
-    {
       "name": "Mike King",
       "kindergardenId": 5,
       "birthDate": "1994-05-11T00:00:00.000Z",
       "id": "Gt4JG6F"
     },
     {
-      "name": "Mike",
-      "kindergardenId": 3,
-      "birthDate": "1992-01-01T00:00:00.000Z",
-      "id": "4pf-4s5"
-    },
-    {
-      "name": "franzilein",
-      "kindergardenId": 2,
-      "birthDate": "2023-11-15T23:00:00.000Z",
-      "id": "G3umH3F"
-    },
-    {
-      "name": "dev",
-      "kindergardenId": 3,
-      "birthDate": "2023-11-12T23:00:00.000Z",
-      "id": "ng6tN1Y"
-    },
-    {
-      "name": "scöhasdf234234",
-      "kindergardenId": 3,
-      "birthDate": "2023-11-14T23:00:00.000Z",
-      "id": "bynKKMu"
-    },
-    {
-      "name": "asdf",
+      "name": "Georg",
       "kindergardenId": 3,
       "birthDate": "2023-11-07T23:00:00.000Z",
-      "id": "X4M4UpM"
+      "id": "uWj0Zsm"
     },
     {
-      "name": "sdsd",
+      "name": "asdfsdf",
       "kindergardenId": 3,
-      "birthDate": "2023-11-15T23:00:00.000Z",
-      "id": "8sxWai4"
+      "birthDate": "2023-12-22T23:00:00.000Z",
+      "id": "9YRYztb"
+    },
+    {
+      "name": "cbcvbcvb",
+      "kindergardenId": 3,
+      "birthDate": "2023-11-14T23:00:00.000Z",
+      "id": "dLkuxBS"
     }
   ],
   "kindergardens": [
