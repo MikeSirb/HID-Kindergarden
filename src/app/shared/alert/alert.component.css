@@ -3,12 +3,12 @@
   top: 0;
   right: 20px;
   z-index: 1000;
-  display:block;
+  display: block;
   width: max-content;
   max-width: 500px;
 }
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 mat-icon {
   color: darkorange;

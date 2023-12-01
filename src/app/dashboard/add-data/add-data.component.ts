@@ -33,7 +33,7 @@ export class AddDataComponent implements OnInit {
 
       this.message = `${this.addChildForm.value.name} : wurde erfolgreich im Kindergarten angemeldet!`
       this.displayAlert = true;
-      this.addChildForm.reset(); // not able to remove touched from the form inputs
+      this.addChildForm.reset(); // unfortunately not able to remove touched from the form inputs
 
       setTimeout(() => {
         this.displayAlert = false;

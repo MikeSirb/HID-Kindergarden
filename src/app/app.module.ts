@@ -1,16 +1,16 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DataComponent } from './dashboard/data/data.component';
-import { AddDataComponent } from './dashboard/add-data/add-data.component';
-import { HeaderComponent } from './header/header.component';
-import { ButtonComponent } from './dashboard/button/button.component';
-import { PaginationPipe } from './dashboard/data/pagination.pipe';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {DataComponent} from './dashboard/data/data.component';
+import {AddDataComponent} from './dashboard/add-data/add-data.component';
+import {HeaderComponent} from './header/header.component';
+import {ButtonComponent} from './dashboard/button/button.component';
+import {PaginationPipe} from './dashboard/data/pagination.pipe';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSelectModule} from "@angular/material/select";
 import {MatInputModule} from "@angular/material/input";
 import {MatFormFieldModule} from "@angular/material/form-field";
@@ -23,6 +23,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {AlertComponent} from "./shared/alert/alert.component";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
+import {AboutPageComponent} from "./about-page/about-page.component";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {MatIconModule} from "@angular/material/icon";
     HeaderComponent,
     ButtonComponent,
     AlertComponent,
-    PaginationPipe
+    PaginationPipe,
+    AboutPageComponent
   ],
   imports: [
     BrowserModule,
@@ -53,11 +55,11 @@ import {MatIconModule} from "@angular/material/icon";
     MatDividerModule,
     MatTableModule,
     MatToolbarModule,
-    // Pagination
     MatPaginatorModule,
     MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

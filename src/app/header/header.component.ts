@@ -1,18 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   public title: string = "Mike's Elite-Kindergarten";
   public imagePath: string = "./../assets/images/kindergarden.jpg";
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

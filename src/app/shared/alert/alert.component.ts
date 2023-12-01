@@ -11,20 +11,8 @@ export class AlertComponent {
   @Input() title!: string;
   @Output() closeModalEvent = new EventEmitter<boolean>();
 
-
-/*
-  public modalDiv: HTMLElement | null = null;
-
-  ngAfterViewInit(): void {
-    this.modalDiv = document.getElementById('myModal');
-    if (this.modalDiv != null) {
-      this.modalDiv.style.display = 'block';
-    }
-  }
-*/
-
   closeModal() {
-      this.closeModalEvent.emit(false);
+    this.closeModalEvent.emit(false);
   }
 
 }

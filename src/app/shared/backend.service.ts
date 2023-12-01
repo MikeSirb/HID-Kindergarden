@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core';
 import {Kindergarden} from './interfaces/Kindergarden';
 import {StoreService} from './store.service';
 import {Child, ChildResponse} from './interfaces/Child';
-import { ConfigService } from './config.service';
+import {ConfigService} from './config.service';
 
 @Injectable({
   providedIn: 'root'

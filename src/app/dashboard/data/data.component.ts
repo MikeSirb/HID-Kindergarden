@@ -21,7 +21,6 @@ export class DataComponent implements OnInit {
   title: string = 'Information zur Abmeldung'
   displayAlert: boolean = false;
 
-
   ngOnInit(): void {
     this.backendService.getChildren(this.currentPage);
   }

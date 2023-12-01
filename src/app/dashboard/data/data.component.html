@@ -1,9 +1,9 @@
 <table mat-table [dataSource]="storeService.children" class="mat-elevation-z8">
 
-  <!-- Position Column -->
   <ng-container matColumnDef="position">
-    <th mat-header-cell *matHeaderCellDef> No. </th>
-    <td mat-cell *matCellDef="let child; let i = index">{{i + 1 + currentPage*configService.getChildrenPerPage() }}</td>
+    <th mat-header-cell *matHeaderCellDef> No.</th>
+    <td mat-cell
+        *matCellDef="let child; let i = index">{{i + 1 + currentPage * configService.getChildrenPerPage() }}</td>
   </ng-container>
 
   <ng-container matColumnDef="name">
@@ -38,27 +38,21 @@
     </td>
   </ng-container>
 
-  <!-- Defines the Header and Cell association -->
-  <tr mat-header-row *matHeaderRowDef="['position' ,'name', 'kindergarden', 'address', 'age', 'birthdate', 'actions']"></tr>
-  <tr mat-row *matRowDef="let row; columns: ['position', 'name', 'kindergarden', 'address', 'age', 'birthdate', 'actions']"></tr>
+  <tr mat-header-row
+      *matHeaderRowDef="['position' ,'name', 'kindergarden', 'address', 'age', 'birthdate', 'actions']"></tr>
+  <tr mat-row
+      *matRowDef="let row; columns: ['position', 'name', 'kindergarden', 'address', 'age', 'birthdate', 'actions']"></tr>
 </table>
 
 <mat-paginator
-               class="mat-elevation-z8"
-               (page)="handlePageEvent($event)"
-               [pageSize]="configService.getChildrenPerPage()"
-               [pageIndex]="currentPage"
-               [length]="storeService.childrenTotalCount"
-               [pageSizeOptions]="pageSizeOptions"
-               [showFirstLastButtons]="true"
-               aria-label="Select page">
+  class="mat-elevation-z8"
+  (page)="handlePageEvent($event)"
+  [pageSize]="configService.getChildrenPerPage()"
+  [pageIndex]="currentPage"
+  [length]="storeService.childrenTotalCount"
+  [pageSizeOptions]="pageSizeOptions"
+  [showFirstLastButtons]="true"
+  aria-label="Select page">
 </mat-paginator>
-
-<!-- Div-Box alert -->
-<!--
-<div class="alert alert-info m-2" *ngIf="displayAlert">
-  <p class="fs-4">{{ message }}</p>
-</div>
--->
 
 <app-alert [message]="message" [title]="title" *ngIf="displayAlert" (closeModalEvent)="closeAlerts($event)"></app-alert>
