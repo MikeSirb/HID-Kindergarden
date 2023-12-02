@@ -56,7 +56,7 @@ import {AboutPageComponent} from "./about-page/about-page.component";
     MatTableModule,
     MatToolbarModule,
     MatPaginatorModule,
-    MatIconModule
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
