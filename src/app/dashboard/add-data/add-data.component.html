@@ -10,7 +10,6 @@
     <mat-form-field>
         <input matInput [matDatepicker]="picker" placeholder="MM/DD/YYYY" formControlName="birthDate">
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-<!--        <mat-datepicker #picker></mat-datepicker>-->
         <mat-datepicker  [startAt]="datePickerDate" #picker></mat-datepicker>
         <mat-error *ngIf="this.addChildForm.controls.birthDate.hasError('invalidMinAge')">The Child must be at
             least {{minAge}} years old!

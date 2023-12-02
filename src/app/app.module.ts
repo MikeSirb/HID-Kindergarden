@@ -15,7 +15,7 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatInputModule} from "@angular/material/input";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatDatepickerModule} from "@angular/material/datepicker";
-import {MatNativeDateModule} from "@angular/material/core";
+import {MAT_DATE_LOCALE, MatNativeDateModule} from "@angular/material/core";
 import {MatButtonModule} from "@angular/material/button";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatTableModule} from "@angular/material/table";
@@ -26,40 +26,42 @@ import {MatIconModule} from "@angular/material/icon";
 import {AboutPageComponent} from "./about-page/about-page.component";
 
 @NgModule({
-  declarations: [
-    // Components
-    AppComponent,
-    DashboardComponent,
-    AddDataComponent,
-    DataComponent,
-    HeaderComponent,
-    ButtonComponent,
-    AlertComponent,
-    PaginationPipe,
-    AboutPageComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    // Angular Material
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatButtonModule,
-    MatDividerModule,
-    MatTableModule,
-    MatToolbarModule,
-    MatPaginatorModule,
-    MatIconModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        // Components
+        AppComponent,
+        DashboardComponent,
+        AddDataComponent,
+        DataComponent,
+        HeaderComponent,
+        ButtonComponent,
+        AlertComponent,
+        PaginationPipe,
+        AboutPageComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        // Angular Material
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatButtonModule,
+        MatDividerModule,
+        MatTableModule,
+        MatToolbarModule,
+        MatPaginatorModule,
+        MatIconModule,
+    ],
+    providers: [
+        {provide: MAT_DATE_LOCALE, useValue: 'en-GB',},
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }
