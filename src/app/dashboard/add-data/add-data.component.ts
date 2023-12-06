@@ -1,12 +1,17 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {BackendService} from 'src/app/shared/backend.service';
 import {StoreService} from 'src/app/shared/store.service';
+import {CustomErrorStateMatcher} from "./custom-state-matcher";
+import {ErrorStateMatcher} from "@angular/material/core";
 
 @Component({
     selector: 'app-add-data',
     templateUrl: './add-data.component.html',
-    styleUrls: ['./add-data.component.scss']
+    styleUrls: ['./add-data.component.scss'],
+    providers: [
+        {provide: ErrorStateMatcher, useClass: CustomErrorStateMatcher}
+    ]
 })
 export class AddDataComponent implements OnInit {
 
@@ -20,8 +25,7 @@ export class AddDataComponent implements OnInit {
     maxAge: number = 5;
     datePickerDate!: Date;
 
-    constructor(private formbuilder: FormBuilder, public storeService: StoreService, public backendService: BackendService) {
-    }
+    constructor(private formbuilder: FormBuilder, public storeService: StoreService, public backendService: BackendService) {}
 
     ngOnInit(): void {
         this.addChildForm = this.formbuilder.group({
@@ -48,15 +52,16 @@ export class AddDataComponent implements OnInit {
     }
 
     checkTheAge(control: FormControl): { [key: string]: boolean } | null {
-        const age = this.getAge(control);
+        if(control.value !== null) {
+            const age = this.getAge(control);
 
-        if (age < this.minAge) {
-            return {"invalidMinAge": true}
+            if (age < this.minAge) {
+                return {"invalidMinAge": true}
+            }
+            if (age >= this.maxAge) {
+                return {"invalidMaxAge": true}
+            }
         }
-        if (age >= this.maxAge) {
-            return {"invalidMaxAge": true}
-        }
-
         return null;
     }
 
@@ -82,4 +87,5 @@ export class AddDataComponent implements OnInit {
 
         return threeYearsAgo;
     }
+
 }

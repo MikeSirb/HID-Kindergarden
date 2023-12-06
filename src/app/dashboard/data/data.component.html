@@ -44,7 +44,7 @@
       *matRowDef="let row; columns: ['position', 'name', 'kindergarden', 'address', 'age', 'birthdate', 'actions']"></tr>
 </table>
 
-<mat-paginator
+<mat-paginator #paginator
   class="mat-elevation-z8"
   (page)="handlePageEvent($event)"
   [pageSize]="configService.getChildrenPerPage()"

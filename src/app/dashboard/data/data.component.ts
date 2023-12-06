@@ -1,7 +1,7 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {BackendService} from 'src/app/shared/backend.service';
 import {StoreService} from 'src/app/shared/store.service';
-import {PageEvent} from "@angular/material/paginator";
+import {MatPaginator, PageEvent} from "@angular/material/paginator";
 import {ConfigService} from "../../shared/config.service";
 
 @Component({
@@ -11,18 +11,22 @@ import {ConfigService} from "../../shared/config.service";
 })
 export class DataComponent implements OnInit {
 
-  constructor(public storeService: StoreService, private backendService: BackendService, public configService: ConfigService) {
-  }
+  @ViewChild('paginator', { static: true }) paginator!: MatPaginator;
 
   @Input() currentPage!: number;
   @Output() selectPageEvent = new EventEmitter<number>();
+
   pageSizeOptions: number[] = [2, 5, 10, 15];
-  public message: string = ""
+  message: string = ""
   title: string = 'Information zur Abmeldung'
   displayAlert: boolean = false;
 
+  constructor(public storeService: StoreService, private backendService: BackendService, public configService: ConfigService) {
+  }
+
   ngOnInit(): void {
     this.backendService.getChildren(this.currentPage);
+    this.paginator._intl.itemsPerPageLabel = "Kinder pro Seite: ";
   }
 
   public cancelRegistration(childId: string) {
