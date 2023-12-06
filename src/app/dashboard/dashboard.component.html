@@ -1,4 +1,15 @@
-<app-data [currentPage]="currentPage" (selectPageEvent)="receiveMessage($event)"></app-data>
-<br>
-<app-button (toggleForms)="changeVisibility($event)" [status]="isActive"></app-button>
-<app-add-data [currentPage]="currentPage" *ngIf="isActive"></app-add-data>
+<div class="container-fluid" id="dashboard-container">
+  <div class="row">
+    <app-data [currentPage]="currentPage" (selectPageEvent)="receiveMessage($event)"></app-data>
+  </div>
+  <div class="row mt-3 mb-3">
+    <app-button (toggleForms)="changeVisibility($event)" [status]="isActive"></app-button>
+  </div>
+  <div class="row justify-content-center" *ngIf="isActive">
+    <div class="card p-2 mb-5">
+      <app-add-data [currentPage]="currentPage"></app-add-data>
+    </div>
+  </div>
+</div>
+
+

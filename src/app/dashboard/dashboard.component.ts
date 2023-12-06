@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-  public isActive = true;
-  public currentPage: number = 1;
+  public isActive = false;
+  public currentPage: number = 0;
 
   receiveMessage(newPageCount: number) {
     this.currentPage = newPageCount;

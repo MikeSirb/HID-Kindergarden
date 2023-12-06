@@ -1,1 +1,31 @@
-<p>about-page works!</p>
+<div class="container text-center justify-content-center">
+
+  <div class="row">
+    <h2>Wissenswerters über unser Kindergarten</h2>
+    <p class="p-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aspernatur beatae, commodi
+      corporis cupiditate
+      dolores ea eos, illum in ipsum laborum libero necessitatibus nobis nostrum odit, officiis possimus quae quia
+      quibusdam quos recusandae repellendus sed soluta suscipit tenetur vel voluptas voluptatibus. Exercitationem hic
+      inventore ipsum nulla quasi repellendus voluptatum? Ad alias animi beatae cumque dignissimos enim, exercitationem
+      modi neque nihil pariatur porro quaerat sapiente voluptate! Aliquam commodi cumque, deleniti dignissimos
+      distinctio
+      eveniet fuga modi nihil officiis quibusdam quidem quo, reprehenderit similique soluta totam veniam voluptate
+      voluptatum. Aliquam atque excepturi inventore, itaque minus quia reprehenderit, sed sequi sunt velit veritatis
+      voluptatum.</p>
+  </div>
+
+  <div class="row row-cols-auto justify-content-center">
+    <div class="col" *ngFor="let item of items; let i = index">
+
+      <div class="card">
+        <img src="https://picsum.photos/200/300" class="card-img-top" alt="example-picture">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

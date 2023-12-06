@@ -5,25 +5,22 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss']
 })
+
 export class ButtonComponent {
   @Output() toggleForms = new EventEmitter();
-  @Input() status: boolean | undefined;
-  public statusText: string = "schließen"
+  @Input() status!: boolean;
+  public statusText: string = "Öffnen"
+  public statusColor: string = "warn";
 
-  async onClick() {
-    console.log(this.status)
+  onClick() {
     this.toggleForms.emit(!this.status);
 
-    async function delay() {
-      return new Promise(resolve => setTimeout(resolve, 50));
-    }
+    setTimeout(() => {
+      this.statusText = this.status ? "Schließen" : "Öffnen";
+      this.statusColor = this.status ? "primary" : "warn";
+    }, 100)
 
-    await delay();
-
-    console.log(this.status)
-    this.statusText = this.status ? "schließen" : "öffnen";
   }
-
 
 
 }

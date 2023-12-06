@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { BackendService } from 'src/app/shared/backend.service';
-import { CHILDREN_PER_PAGE } from 'src/app/shared/constants';
-import { StoreService } from 'src/app/shared/store.service';
+import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {BackendService} from 'src/app/shared/backend.service';
+import {StoreService} from 'src/app/shared/store.service';
+import {MatPaginator, PageEvent} from "@angular/material/paginator";
+import {ConfigService} from "../../shared/config.service";
 
 @Component({
   selector: 'app-data',
@@ -10,12 +11,42 @@ import { StoreService } from 'src/app/shared/store.service';
 })
 export class DataComponent implements OnInit {
 
-  constructor(public storeService: StoreService, private backendService: BackendService) {}
+  @ViewChild('paginator', { static: true }) paginator!: MatPaginator;
+
   @Input() currentPage!: number;
   @Output() selectPageEvent = new EventEmitter<number>();
-  public page: number = 0;
+
+  pageSizeOptions: number[] = [2, 5, 10, 15];
+  message: string = ""
+  title: string = 'Information zur Abmeldung'
+  displayAlert: boolean = false;
+
+  constructor(public storeService: StoreService, private backendService: BackendService, public configService: ConfigService) {
+  }
 
   ngOnInit(): void {
+    this.backendService.getChildren(this.currentPage);
+    this.paginator._intl.itemsPerPageLabel = "Kinder pro Seite: ";
+  }
+
+  public cancelRegistration(childId: string) {
+    this.backendService.deleteChildData(childId, this.currentPage);
+
+    this.storeService.children.filter((child) => {
+      if (child.id === childId)
+        this.message = `${child.name} : wurde erfolgreich vom Kindergarten abgemeldet`;
+    });
+
+    this.displayAlert = true;
+    setTimeout(() => {
+      this.displayAlert = false;
+    }, 10000)
+  }
+
+  handlePageEvent(event: PageEvent) {
+    this.configService.setChildrenPerPage(event.pageSize);
+    this.currentPage = event.pageIndex;
+    this.selectPageEvent.emit(this.currentPage)
     this.backendService.getChildren(this.currentPage);
   }
 
@@ -25,23 +56,13 @@ export class DataComponent implements OnInit {
     var age = today.getFullYear() - birthDateTimestamp.getFullYear();
     var m = today.getMonth() - birthDateTimestamp.getMonth();
     if (m < 0 || (m === 0 && today.getDate() < birthDateTimestamp.getDate())) {
-        age--;
+      age--;
     }
     return age;
   }
 
-  selectPage(i: any) {
-    let currentPage = i;
-    this.selectPageEvent.emit(currentPage)
-    this.backendService.getChildren(currentPage);
-  }
-
-  public returnAllPages() {
-    return Math.ceil(this.storeService.childrenTotalCount / CHILDREN_PER_PAGE)
-  }
-
-  public cancelRegistration(childId: string) {
-    this.backendService.deleteChildData(childId, this.currentPage);
+  closeAlerts(event: boolean) {
+    this.displayAlert = event;
   }
 }
 

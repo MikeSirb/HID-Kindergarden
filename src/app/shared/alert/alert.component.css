@@ -1,0 +1,22 @@
+.toast {
+  position: fixed;
+  top: 0;
+  right: 20px;
+  z-index: 1000;
+  display: block;
+  width: max-content;
+  max-width: 500px;
+}
+
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+mat-icon {
+  color: darkorange;
+  font-family: 'Material Icons', serif !important;
+}
+
+@media (max-width: 540px) {
+  .toast {
+    max-width: 300px;
+  }
+}
