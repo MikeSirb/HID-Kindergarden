@@ -1,2 +1,9 @@
+<div id="view" *ngIf="storeService.isLoading">
+  <div class="spinner">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+</div>
 <app-header></app-header>
 <router-outlet></router-outlet>
+<app-alert [title]="alertService.title"
+           [message]="alertService.message" *ngIf="alertService.displayAlert"></app-alert>

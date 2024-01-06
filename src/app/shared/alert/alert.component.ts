@@ -1,4 +1,5 @@
-import {Component, EventEmitter, Input, Output} from "@angular/core";
+import {Component, EventEmitter, Input, OnDestroy, Output} from "@angular/core";
+import {AlertService} from "../alert.service";
 
 @Component({
   selector: 'app-alert',
@@ -9,10 +10,11 @@ import {Component, EventEmitter, Input, Output} from "@angular/core";
 export class AlertComponent {
   @Input() message!: string;
   @Input() title!: string;
-  @Output() closeModalEvent = new EventEmitter<boolean>();
+
+  constructor(public alertService: AlertService) {}
 
   closeModal() {
-    this.closeModalEvent.emit(false);
+    this.alertService.displayAlert = false;
   }
 
 }

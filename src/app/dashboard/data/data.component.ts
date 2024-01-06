@@ -3,6 +3,8 @@ import {BackendService} from 'src/app/shared/backend.service';
 import {StoreService} from 'src/app/shared/store.service';
 import {MatPaginator, PageEvent} from "@angular/material/paginator";
 import {ConfigService} from "../../shared/config.service";
+import {Child} from "../../shared/interfaces/Child";
+import {AlertService} from "../../shared/alert.service";
 
 @Component({
   selector: 'app-data',
@@ -11,43 +13,38 @@ import {ConfigService} from "../../shared/config.service";
 })
 export class DataComponent implements OnInit {
 
-  @ViewChild('paginator', { static: true }) paginator!: MatPaginator;
-
-  @Input() currentPage!: number;
-  @Output() selectPageEvent = new EventEmitter<number>();
+  @ViewChild('paginator', {static: true}) paginator!: MatPaginator;
 
   pageSizeOptions: number[] = [2, 5, 10, 15];
-  message: string = ""
-  title: string = 'Information zur Abmeldung'
-  displayAlert: boolean = false;
+  removingChildId: string = "";
 
-  constructor(public storeService: StoreService, private backendService: BackendService, public configService: ConfigService) {
+  constructor(public storeService: StoreService, private backendService: BackendService, public configService: ConfigService, public alertService: AlertService) {
   }
 
   ngOnInit(): void {
-    this.backendService.getChildren(this.currentPage);
+    this.backendService.getChildren().subscribe(() => {
+    })
     this.paginator._intl.itemsPerPageLabel = "Kinder pro Seite: ";
+
   }
 
-  public cancelRegistration(childId: string) {
-    this.backendService.deleteChildData(childId, this.currentPage);
+  public cancelRegistration(child: Child) {
+    this.removingChildId = child.id;
+    this.storeService.isRemoving = true;
+    this.backendService.deleteChildData(child);
 
-    this.storeService.children.filter((child) => {
-      if (child.id === childId)
-        this.message = `${child.name} : wurde erfolgreich vom Kindergarten abgemeldet`;
-    });
-
-    this.displayAlert = true;
     setTimeout(() => {
-      this.displayAlert = false;
+      this.alertService.displayAlert = false;
     }, 10000)
+
+
   }
 
   handlePageEvent(event: PageEvent) {
     this.configService.setChildrenPerPage(event.pageSize);
-    this.currentPage = event.pageIndex;
-    this.selectPageEvent.emit(this.currentPage)
-    this.backendService.getChildren(this.currentPage);
+    this.configService.setCurrentPage(event.pageIndex);
+    this.backendService.getChildren().subscribe(() => {
+    })
   }
 
   getAge(birthDate: string) {
@@ -61,9 +58,6 @@ export class DataComponent implements OnInit {
     return age;
   }
 
-  closeAlerts(event: boolean) {
-    this.displayAlert = event;
-  }
 }
 
 

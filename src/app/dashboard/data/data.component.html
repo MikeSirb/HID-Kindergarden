@@ -3,7 +3,7 @@
   <ng-container matColumnDef="position">
     <th mat-header-cell *matHeaderCellDef> No.</th>
     <td mat-cell
-        *matCellDef="let child; let i = index">{{i + 1 + currentPage * configService.getChildrenPerPage() }}</td>
+        *matCellDef="let child; let i = index">{{i + 1 + configService.getCurrentPage() * configService.getChildrenPerPage() }}</td>
   </ng-container>
 
   <ng-container matColumnDef="name">
@@ -34,7 +34,12 @@
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef>Abmeldung</th>
     <td mat-cell *matCellDef="let child">
-      <button mat-button (click)="cancelRegistration(child.id)">Abmelden</button>
+        <div class="spinner" *ngIf="storeService.isRemoving && (child.id == removingChildId); else elseBlock">
+          <app-loading-spinner ></app-loading-spinner>
+        </div>
+      <ng-template #elseBlock>
+        <button mat-button (click)="cancelRegistration(child)">Abmelden</button>
+      </ng-template>
     </td>
   </ng-container>
 
@@ -48,11 +53,10 @@
   class="mat-elevation-z8"
   (page)="handlePageEvent($event)"
   [pageSize]="configService.getChildrenPerPage()"
-  [pageIndex]="currentPage"
+  [pageIndex]="configService.getCurrentPage()"
   [length]="storeService.childrenTotalCount"
   [pageSizeOptions]="pageSizeOptions"
   [showFirstLastButtons]="true"
   aria-label="Select page">
 </mat-paginator>
 
-<app-alert [message]="message" [title]="title" *ngIf="displayAlert" (closeModalEvent)="closeAlerts($event)"></app-alert>

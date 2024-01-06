@@ -1,0 +1,23 @@
+<!--
+
+<form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
+
+   <div class="input-group w-50">
+     <button mat-raised-button color="primary" [disabled]="filterForm.invalid" type="submit">
+       <mat-icon fontIcon="search"></mat-icon>
+     </button>
+  <input type="input" class="form-control" placeholder="Filter nach Kindergarten" formControlName="filter">
+   </div>
+   -->
+<form [formGroup]="filterForm">
+    <div class="row text-center">
+        <mat-form-field>
+            <mat-label>Filter nach Kindergarten</mat-label>
+            <mat-select formControlName="filter" (selectionChange)="onSubmit()">
+                <mat-option [value]="">Alle Kindergärten</mat-option>
+                <mat-option *ngFor="let kindergarden of storeService.kindergardens" [value]="kindergarden.id">
+                    {{kindergarden.name}}, {{kindergarden.address}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</form>

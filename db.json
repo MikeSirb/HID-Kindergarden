@@ -37,22 +37,10 @@
       "id": "9py_fwi"
     },
     {
-      "name": "Heidi aus den Bergen",
-      "kindergardenId": 2,
-      "birthDate": "2023-10-05",
-      "id": "hOHEFCv"
-    },
-    {
       "name": "Traude Widmann",
       "kindergardenId": 2,
       "birthDate": "2023-10-05",
       "id": "cu0_2Ad"
-    },
-    {
-      "name": "Heiner Kühlschrank",
-      "kindergardenId": 2,
-      "birthDate": "2023-10-26",
-      "id": "ip57WMS"
     },
     {
       "name": "chuppi",
@@ -73,58 +61,10 @@
       "id": "J18lDo_"
     },
     {
-      "name": "goro",
-      "kindergardenId": 2,
-      "birthDate": "1993-02-02T00:00:00.000Z",
-      "id": "Jy3jYqS"
-    },
-    {
-      "name": "Mike King",
-      "kindergardenId": 5,
-      "birthDate": "1994-05-11T00:00:00.000Z",
-      "id": "Gt4JG6F"
-    },
-    {
-      "name": "Georg",
-      "kindergardenId": 3,
-      "birthDate": "2023-11-07T23:00:00.000Z",
-      "id": "uWj0Zsm"
-    },
-    {
-      "name": "asdfasd",
-      "kindergardenId": 2,
-      "birthDate": "2020-11-10T23:00:00.000Z",
-      "id": "h3JN3z8"
-    },
-    {
-      "name": "asdf",
-      "kindergardenId": 2,
-      "birthDate": "2020-11-30T23:00:00.000Z",
-      "id": "SMPbakc"
-    },
-    {
-      "name": "asdfa",
-      "kindergardenId": 2,
-      "birthDate": "2020-11-30T23:00:00.000Z",
-      "id": "uAAy8pu"
-    },
-    {
       "name": "mike stabil",
       "kindergardenId": 2,
       "birthDate": "2020-12-02T23:00:00.000Z",
       "id": "qCy54Uj"
-    },
-    {
-      "name": "kevin levrone",
-      "kindergardenId": 1,
-      "birthDate": "2020-11-30T23:00:00.000Z",
-      "id": "liQN8V0"
-    },
-    {
-      "name": "Johan Strauß",
-      "kindergardenId": 4,
-      "birthDate": "2020-12-01T23:00:00.000Z",
-      "id": "4-Q_juT"
     },
     {
       "name": "Markus Rühl",
@@ -155,60 +95,6 @@
       "kindergardenId": 2,
       "birthDate": "2020-12-01T23:00:00.000Z",
       "id": "jp_Y3lg"
-    },
-    {
-      "name": "asdf",
-      "kindergardenId": 2,
-      "birthDate": "2020-11-30T23:00:00.000Z",
-      "id": "WNfRHoS"
-    },
-    {
-      "name": "kebap",
-      "kindergardenId": 3,
-      "birthDate": "2020-11-30T23:00:00.000Z",
-      "id": "ll1jzty"
-    },
-    {
-      "name": "jkjk",
-      "kindergardenId": 2,
-      "birthDate": "2020-12-02T23:00:00.000Z",
-      "id": "XrKtCwM"
-    },
-    {
-      "name": "sdf",
-      "kindergardenId": 2,
-      "birthDate": "2020-11-30T23:00:00.000Z",
-      "id": "yF0RKKi"
-    },
-    {
-      "name": "Kevin",
-      "kindergardenId": 2,
-      "birthDate": "2020-11-30T23:00:00.000Z",
-      "id": "8Xgq0OA"
-    },
-    {
-      "name": "mike",
-      "kindergardenId": 2,
-      "birthDate": "2020-12-01T23:00:00.000Z",
-      "id": "wZ3shP7"
-    },
-    {
-      "name": "asdf",
-      "kindergardenId": 2,
-      "birthDate": "2020-11-30T23:00:00.000Z",
-      "id": "IGYN6hm"
-    },
-    {
-      "name": "asd",
-      "kindergardenId": 2,
-      "birthDate": "2020-11-30T23:00:00.000Z",
-      "id": "EWICeC5"
-    },
-    {
-      "name": "kea",
-      "kindergardenId": 1,
-      "birthDate": "2020-12-01T23:00:00.000Z",
-      "id": "jKcBA9Y"
     }
   ],
   "kindergardens": [

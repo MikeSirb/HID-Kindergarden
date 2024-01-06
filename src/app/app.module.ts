@@ -24,44 +24,50 @@ import {AlertComponent} from "./shared/alert/alert.component";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {AboutPageComponent} from "./about-page/about-page.component";
+import {LoadingSpinnerComponent} from './loading-spinner/loading-spinner.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import { FilterBarComponent } from './dashboard/filter-bar/filter-bar.component';
 
 @NgModule({
-    declarations: [
-        // Components
-        AppComponent,
-        DashboardComponent,
-        AddDataComponent,
-        DataComponent,
-        HeaderComponent,
-        ButtonComponent,
-        AlertComponent,
-        PaginationPipe,
-        AboutPageComponent
-    ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        FormsModule,
-        ReactiveFormsModule,
-        BrowserAnimationsModule,
-        // Angular Material
-        MatFormFieldModule,
-        MatInputModule,
-        MatSelectModule,
-        MatDatepickerModule,
-        MatNativeDateModule,
-        MatButtonModule,
-        MatDividerModule,
-        MatTableModule,
-        MatToolbarModule,
-        MatPaginatorModule,
-        MatIconModule,
-    ],
-    providers: [
-        {provide: MAT_DATE_LOCALE, useValue: 'en-GB',},
-    ],
-    bootstrap: [AppComponent]
+  declarations: [
+    // Components
+    AppComponent,
+    DashboardComponent,
+    AddDataComponent,
+    DataComponent,
+    HeaderComponent,
+    ButtonComponent,
+    AlertComponent,
+    PaginationPipe,
+    AboutPageComponent,
+    LoadingSpinnerComponent,
+    FilterBarComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    // Angular Material
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatTableModule,
+    MatToolbarModule,
+    MatPaginatorModule,
+    MatIconModule,
+    MatProgressSpinnerModule
+  ],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'en-GB',},
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }

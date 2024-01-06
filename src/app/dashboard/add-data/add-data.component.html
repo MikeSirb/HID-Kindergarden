@@ -1,35 +1,36 @@
 <form [formGroup]="addChildForm" (ngSubmit)="onSubmit()">
-    <h3 class="text-center fw-bold">Anmelderformular</h3>
-    <mat-divider></mat-divider>
-    <mat-form-field>
-        <input matInput placeholder="Name" type="input" formControlName="name" #nameInput>
-        <mat-error *ngIf="this.addChildForm.controls.name.hasError('required')">Name erforderlich!</mat-error>
-    </mat-form-field>
-    <mat-divider></mat-divider>
+  <h3 class="text-center fw-bold">Anmelderformular</h3>
+  <mat-divider></mat-divider>
+  <mat-form-field>
+    <input matInput placeholder="Name" type="input" formControlName="name" #nameInput>
+    <mat-error *ngIf="this.addChildForm.controls.name.hasError('required')">Name erforderlich!</mat-error>
+  </mat-form-field>
+  <mat-divider></mat-divider>
 
-    <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="MM/DD/YYYY" formControlName="birthDate">
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker  [startAt]="datePickerDate" #picker></mat-datepicker>
-        <mat-error *ngIf="this.addChildForm.controls.birthDate.hasError('invalidMinAge')">Das Mindestalter ist {{minAge}} Jahre!
-        </mat-error>
-        <mat-error *ngIf="this.addChildForm.controls.birthDate.hasError('invalidMaxAge')">Das Höchstalter ist {{maxAge}} Jahre!
-        </mat-error>
-        <mat-error *ngIf="this.addChildForm.controls.birthDate.hasError('required')">Geburtsdatum erforderlich!
-        </mat-error>
-    </mat-form-field>
-    <mat-divider></mat-divider>
-    <mat-form-field>
-        <mat-select formControlName="kindergardenId">
-            <mat-option value="" disabled>Bitte auswählen</mat-option>
-            <mat-option *ngFor="let kindergarden of storeService.kindergardens" [value]="kindergarden.id">
-                {{kindergarden.name}}, {{kindergarden.address}}</mat-option>
-        </mat-select>
-        <mat-error *ngIf="this.addChildForm.controls.name.hasError('required')">Ein Auswahl ist erforderlich!</mat-error>
-    </mat-form-field>
-    <mat-divider></mat-divider>
-    <button mat-raised-button [disabled]="this.addChildForm.invalid" color="primary" type="submit">Anmelden</button>
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="MM/DD/YYYY" formControlName="birthDate">
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker [startAt]="datePickerDate" #picker></mat-datepicker>
+    <mat-error *ngIf="this.addChildForm.controls.birthDate.hasError('invalidMinAge')">Das Mindestalter ist {{minAge}}
+      Jahre!
+    </mat-error>
+    <mat-error *ngIf="this.addChildForm.controls.birthDate.hasError('invalidMaxAge')">Das Höchstalter ist {{maxAge}}
+      Jahre!
+    </mat-error>
+    <mat-error *ngIf="this.addChildForm.controls.birthDate.hasError('required')">Geburtsdatum erforderlich!
+    </mat-error>
+  </mat-form-field>
+  <mat-divider></mat-divider>
+  <mat-form-field>
+    <mat-select formControlName="kindergardenId">
+      <mat-option value="" disabled>Bitte auswählen</mat-option>
+      <mat-option *ngFor="let kindergarden of storeService.kindergardens" [value]="kindergarden.id">
+        {{kindergarden.name}}, {{kindergarden.address}}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="this.addChildForm.controls.name.hasError('required')">Ein Auswahl ist erforderlich!</mat-error>
+  </mat-form-field>
+  <mat-divider></mat-divider>
+  <button mat-raised-button [disabled]="this.addChildForm.invalid" color="primary" type="submit">Anmelden</button>
 </form>
 
-<app-alert [message]="message" [title]="title" *ngIf="displayAlert" (closeModalEvent)="closeAlerts($event)"></app-alert>
 
