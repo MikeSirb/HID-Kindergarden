@@ -61,12 +61,6 @@
       "id": "J18lDo_"
     },
     {
-      "name": "mike stabil",
-      "kindergardenId": 2,
-      "birthDate": "2020-12-02T23:00:00.000Z",
-      "id": "qCy54Uj"
-    },
-    {
       "name": "Markus Rühl",
       "kindergardenId": 3,
       "birthDate": "2020-12-01T23:00:00.000Z",
@@ -103,35 +97,40 @@
       "name": "Waldorfkindergarden im Zentrum Wiens",
       "address": "Oleandergasse 21, 1220 Wien",
       "betreiber": "MA 10 - Wiener Kindergärten",
-      "typ": 1
+      "typ": 1,
+      "image": "kindergarden_1.jpg"
     },
     {
       "id": 2,
       "name": "Kindergarden der Karl Schubert Schule für seelenpflegebedürftige Kinder und Jugendliche in Wien",
       "address": "Kanitzgasse 1-3, 1230 Wien",
       "betreiber": "Verein Karl Schubertschule für Seelenpflege- bedürftige Kinder und Jugendliche in Wien",
-      "typ": 1
+      "typ": 1,
+      "image": "kindergarden_2.jpg"
     },
     {
       "id": 3,
       "name": "Kindergarden der Stadt Wien",
       "address": "Audorfgasse 20, 1210 Wien",
       "betreiber": "MA 10 - Wiener Kindergärten",
-      "typ": 2
+      "typ": 2,
+      "image": "kindergarden_3.jpg"
     },
     {
       "id": 4,
       "name": "Kindergarden der Stadt Wien",
       "address": "Moßbachergasse 20-24, 1140 Wien",
       "betreiber": "MA 10 - Wiener Kindergärten",
-      "typ": 2
+      "typ": 2,
+      "image": "kindergarden_4.jpg"
     },
     {
       "id": 5,
       "name": "Montessori Kinderhaus Wien 1",
       "address": "Nußdorferstraße 6, 1090 Wien",
       "betreiber": "Montessori Kinderhaus Wien",
-      "typ": 1
+      "typ": 1,
+      "image": "kindergarden_5.jpg"
     }
   ]
 }

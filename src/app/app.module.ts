@@ -27,6 +27,8 @@ import {AboutPageComponent} from "./about-page/about-page.component";
 import {LoadingSpinnerComponent} from './loading-spinner/loading-spinner.component';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import { FilterBarComponent } from './dashboard/filter-bar/filter-bar.component';
+import {MatSortModule} from "@angular/material/sort";
+import { KindergardensComponent } from './kindergardens/kindergardens.component';
 
 @NgModule({
   declarations: [
@@ -41,29 +43,31 @@ import { FilterBarComponent } from './dashboard/filter-bar/filter-bar.component'
     PaginationPipe,
     AboutPageComponent,
     LoadingSpinnerComponent,
-    FilterBarComponent
+    FilterBarComponent,
+    KindergardensComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    // Angular Material
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatButtonModule,
-    MatDividerModule,
-    MatTableModule,
-    MatToolbarModule,
-    MatPaginatorModule,
-    MatIconModule,
-    MatProgressSpinnerModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        // Angular Material
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatButtonModule,
+        MatDividerModule,
+        MatTableModule,
+        MatToolbarModule,
+        MatPaginatorModule,
+        MatIconModule,
+        MatProgressSpinnerModule,
+        MatSortModule
+    ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'en-GB',},
   ],

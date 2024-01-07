@@ -1,19 +1,20 @@
 <div class="container-fluid text-center">
-  <div class="row" id="navbar">
-    <mat-toolbar class="justify-content-center">
-      <a mat-button [routerLink]="['/dashboard']" class="fs-2 px-5">Dashboard</a>&nbsp;&nbsp;
-      <a mat-button [routerLink]="['/about']" class="fs-2 px-5">About</a>
-    </mat-toolbar>
-  </div>
-  <div class="row m-5" id="header-content">
-    <h1 class="fs-1 fw-bold">{{ title }}</h1>
-    <div class="row justify-content-md-center">
-      <div class="col-md-auto">
-        <img width="500" src="{{imagePath}}">
-        <img width="500" src="{{imagePath}}">
-      </div>
+    <div class="row" id="navbar">
+        <mat-toolbar class="justify-content-center">
+            <a mat-button [routerLink]="['/dashboard']" class="fs-2 px-5">Dashboard</a>&nbsp;&nbsp;
+            <a mat-button [routerLink]="['/kindergardens']" class="fs-2 px-5">Kindergärten</a>
+            <a mat-button [routerLink]="['/about']" class="fs-2 px-5">Über uns</a>
+        </mat-toolbar>
     </div>
+    <div class="row m-5" id="header-content">
+        <h1 class="fs-1 fw-bold">{{ title }}</h1>
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+                <img width="500" src="{{imagePath}}">
+                <img width="500" src="{{imagePath}}">
+            </div>
+        </div>
 
-  </div>
+    </div>
 </div>
 

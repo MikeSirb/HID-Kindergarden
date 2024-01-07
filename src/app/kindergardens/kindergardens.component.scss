@@ -1,0 +1,50 @@
+.carousel-inner {
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.7);
+}
+
+.carousel-row {
+  margin-bottom: 5rem;
+}
+
+.container-fluid {
+  background-color: #3f51b5;
+  padding: 0.5rem 8rem;
+}
+
+.carousel-caption {
+  background-color: rgba(63, 81, 181, 0.4);
+}
+
+h2 {
+  font-size: 2rem;
+  color: white;
+}
+
+h3 {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 1440px) {
+
+  h3 {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 1000px) {
+
+  h3 {
+    font-size: 0.9rem;
+  }
+  p {
+    font-size: 0.7rem;
+  }
+}

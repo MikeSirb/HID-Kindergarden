@@ -1,0 +1,38 @@
+<div class="container-fluid text-center justify-content-center">
+
+    <div class="row">
+        <h2 class="m-5">Unsere Partner-Kindergärten</h2>
+    </div>
+
+    <div class="row justify-content-center carousel-row">
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+                <button *ngFor="let kindergarten of storeService.kindergardens; let i = index"
+                        type="button" data-bs-target="#carouselExampleCaptions" [attr.data-bs-slide-to]="i"
+                        [class.active]="i === 0" ></button>
+            </div>
+            <div class="carousel-inner">
+                <div *ngFor="let kindergarten of storeService.kindergardens; let i = index"
+                     class="carousel-item" [class.active]="i === 0">
+                    <img [src]="'assets/images/' + kindergarten.image" class="d-block w-100"
+                         alt="picture of a kindergarden">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>{{kindergarten.name}}</h3>
+                        <p>Betreiber: {{kindergarten.betreiber}}</p>
+                        <p>Addresse: {{kindergarten.address}}</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
