@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ConfigService} from "../shared/config.service";
 
 @Component({
   selector: 'app-loading-spinner',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class LoadingSpinnerComponent {
 
+  constructor(public configService: ConfigService){}
 }

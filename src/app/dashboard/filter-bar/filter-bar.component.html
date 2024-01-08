@@ -14,7 +14,7 @@
         <mat-form-field>
             <mat-label>Filter nach Kindergarten</mat-label>
             <mat-select formControlName="filter" (selectionChange)="onSubmit()">
-                <mat-option [value]="">Alle Kindergärten</mat-option>
+                <mat-option [value]="0">Alle Kindergärten</mat-option>
                 <mat-option *ngFor="let kindergarden of storeService.kindergardens" [value]="kindergarden.id">
                     {{kindergarden.name}}, {{kindergarden.address}}</mat-option>
             </mat-select>

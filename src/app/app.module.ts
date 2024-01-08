@@ -29,6 +29,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import { FilterBarComponent } from './dashboard/filter-bar/filter-bar.component';
 import {MatSortModule} from "@angular/material/sort";
 import { KindergardensComponent } from './kindergardens/kindergardens.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { KindergardensComponent } from './kindergardens/kindergardens.component'
     AboutPageComponent,
     LoadingSpinnerComponent,
     FilterBarComponent,
-    KindergardensComponent
+    KindergardensComponent,
+    TestComponent
   ],
     imports: [
         BrowserModule,

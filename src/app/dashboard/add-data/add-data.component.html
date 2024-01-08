@@ -4,6 +4,7 @@
   <mat-form-field>
     <input matInput placeholder="Name" type="input" formControlName="name" #nameInput>
     <mat-error *ngIf="this.addChildForm.controls.name.hasError('required')">Name erforderlich!</mat-error>
+    <mat-error *ngIf="this.addChildForm.controls.name.hasError('pattern')">Feld muss Vor- und Nachname beinhalten!</mat-error>
   </mat-form-field>
   <mat-divider></mat-divider>
 

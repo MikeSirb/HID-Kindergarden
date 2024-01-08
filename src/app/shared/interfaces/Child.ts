@@ -4,7 +4,8 @@ export interface Child {
     id: string;
     name: string;
     birthDate: string,
-    kindergardenId: number
+    kindergardenId: number,
+    enrollmentDate: Date
 }
 
 export interface ChildResponse {
@@ -12,5 +13,7 @@ export interface ChildResponse {
     name: string;
     birthDate: string,
     kindergarden: Kindergarden,
-    kindergardenId: number
+    kindergardenName: string,
+    kindergardenId: number,
+    enrollmentDate: Date
 }

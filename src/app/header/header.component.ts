@@ -7,7 +7,7 @@ import {Component} from '@angular/core';
 })
 export class HeaderComponent {
 
-  public title: string = "Mike's Elite-Kindergarten";
+  public title: string = "Mike's Elite-Kindergarten-App";
   public imagePath: string = "./../assets/images/kindergarden.jpg";
 
 }

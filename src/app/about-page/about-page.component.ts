@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {StoreService} from "../shared/store.service";
 
 @Component({
   selector: 'app-about-page',
@@ -7,5 +8,6 @@ import {Component} from '@angular/core';
 })
 export class AboutPageComponent {
 
-  items = new Array(4).fill({});
+  items = new Array(4).fill({})
+
 }

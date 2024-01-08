@@ -5,6 +5,8 @@ import {StoreService} from 'src/app/shared/store.service';
 import {CustomErrorStateMatcher} from "./custom-state-matcher";
 import {ErrorStateMatcher} from "@angular/material/core";
 import {AlertService} from "../../shared/alert.service";
+import {Child} from "../../shared/interfaces/Child";
+import {ConfigService} from "../../shared/config.service";
 
 @Component({
   selector: 'app-add-data',
@@ -22,12 +24,13 @@ export class AddDataComponent implements OnInit {
   maxAge: number = 5;
   datePickerDate!: Date;
 
-  constructor(private formbuilder: FormBuilder, public storeService: StoreService, public backendService: BackendService, public alertService: AlertService) {
+  constructor(private formbuilder: FormBuilder, public storeService: StoreService,
+              public backendService: BackendService, public alertService: AlertService) {
   }
 
   ngOnInit(): void {
     this.addChildForm = this.formbuilder.group({
-      name: ['', [Validators.required]],
+      name: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]+ [a-zA-Z]+$/)]],
       kindergardenId: ['', Validators.required],
       birthDate: [null, [Validators.required, this.checkTheAge.bind(this)]]
     })
@@ -37,15 +40,28 @@ export class AddDataComponent implements OnInit {
 
   onSubmit() {
     if (this.addChildForm.valid) {
-      this.backendService.addChildData(this.addChildForm.value);
+      const transformedName = this.transformName(this.addChildForm.value.name);
+      this.addChildForm.patchValue({ name: transformedName });
+
+      const currentDate: Date = new Date();
+      console.log(currentDate);
       this.storeService.isLoading = true;
+      this.backendService.addChildData(this.addChildForm.value, currentDate);
+
 
       this.addChildForm.reset();
 
       setTimeout(() => {
         this.alertService.displayAlert = false;
-      }, 10000)
+      }, 10000);
     }
+  }
+
+  transformName(name: string): string {
+    const names = name.split(' ');
+    const transformedNames = names.map(n => n.charAt(0).toUpperCase() + n.slice(1).toLowerCase());
+
+    return transformedNames.join(' ');
   }
 
   checkTheAge(control: FormControl): { [key: string]: boolean } | null {

@@ -9,8 +9,10 @@ export class ConfigService {
   private currentPage: number = 0;
   private filterStatus: boolean = false;
   private filter: string = "";
-  private sortByKindergarden: boolean = false;
-  private sortByChildname: boolean = false;
+  private bigSize:number = 200;
+  private smallSize: number = 30;
+  private spinnerSize: number = this.bigSize;
+
 
   getChildrenPerPage(): number {
     return this.childrenPerPage;
@@ -44,11 +46,15 @@ export class ConfigService {
     this.filter = value;
   }
 
-  getSortByKindergarden() {
-    return this.sortByKindergarden;
+  getSpinnerSize(): number {
+    return this.spinnerSize;
   }
 
-  setSortByKindergarden(value: boolean){
-    this.sortByKindergarden = value;
+  setSpinnerBiggerSize() {
+    this.spinnerSize = this.bigSize;
+  }
+
+  setSpinnerSmallerSize() {
+    this.spinnerSize = this.smallSize;
   }
 }

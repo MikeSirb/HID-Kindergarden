@@ -9,7 +9,10 @@ export class StoreService {
 
   public kindergardens: Kindergarden[] = [];
   public children: ChildResponse[] = []
+  public childrenSort: any
+  public sort: any;
+
   public childrenTotalCount: number = 0;
-  public isLoading: boolean = true;
+  public isLoading: boolean = false;
   public isRemoving: boolean = false;
 }

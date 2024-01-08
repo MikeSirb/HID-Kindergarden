@@ -25,15 +25,15 @@ export class FilterBarComponent implements OnInit {
 
     onSubmit() {
         this.configService.setFilter(this.filterForm.value.filter);
-        if (this.configService.getFilter() === "") {
+        if (this.configService.getFilter() == "0") {
             this.configService.setFilterStatus(false);
         } else {
-            this.configService.setCurrentPage(0);
             this.configService.setFilterStatus(true)
-            this.storeService.isLoading = true;
-            this.backendService.getChildren().subscribe(() => {
-            });
+
         }
+        this.storeService.isLoading = true;
+        this.backendService.getChildren().subscribe(() => {
+        });
 
     }
 
