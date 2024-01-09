@@ -23,14 +23,13 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {AlertComponent} from "./shared/alert/alert.component";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
-import {AboutPageComponent} from "./about-page/about-page.component";
 import {LoadingSpinnerComponent} from './loading-spinner/loading-spinner.component';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {FilterBarComponent} from './dashboard/filter-bar/filter-bar.component';
 import {MatSortModule} from "@angular/material/sort";
 import {KindergardensComponent} from './kindergardens/kindergardens.component';
-import { FooterComponent } from './footer/footer.component';
-import { KindergardenInfoComponent } from './dashboard/kindergarden-info/kindergarden-info.component';
+import {FooterComponent} from './footer/footer.component';
+import {KindergardenInfoComponent} from './dashboard/kindergarden-info/kindergarden-info.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +42,6 @@ import { KindergardenInfoComponent } from './dashboard/kindergarden-info/kinderg
     ButtonComponent,
     AlertComponent,
     PaginationPipe,
-    AboutPageComponent,
     LoadingSpinnerComponent,
     FilterBarComponent,
     KindergardensComponent,
