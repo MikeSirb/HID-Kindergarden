@@ -10,7 +10,7 @@ export class ButtonComponent {
   @Output() toggleForms = new EventEmitter();
   @Input() status!: boolean;
   public statusText: string = "Öffnen"
-  public statusColor: string = "warn";
+  public statusColor: string = "accent";
 
   onClick() {
     this.toggleForms.emit(!this.status);
