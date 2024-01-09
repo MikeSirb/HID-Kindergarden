@@ -17,7 +17,7 @@ export class ButtonComponent {
 
     setTimeout(() => {
       this.statusText = this.status ? "Schließen" : "Öffnen";
-      this.statusColor = this.status ? "primary" : "warn";
+      this.statusColor = this.status ? "primary" : "accent";
     }, 100)
 
   }
