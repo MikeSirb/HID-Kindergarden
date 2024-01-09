@@ -2,6 +2,10 @@
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.7);
 }
 
+#kindergarden-info-box {
+  display: none;
+}
+
 .carousel-row {
   margin-bottom: 5rem;
 }
@@ -39,7 +43,22 @@ p {
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
+
+  h3 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+
+  .container-fluid {
+    padding: 0.5rem 4rem;
+  }
+}
+
+
+@media (max-width: 768px) {
 
   h3 {
     font-size: 0.9rem;
@@ -47,4 +66,25 @@ p {
   p {
     font-size: 0.7rem;
   }
+
+  .container-fluid {
+    padding: 0.5rem 1.5rem;
+  }
+
+
+}
+
+@media (max-width: 576px) {
+
+  h3 {
+    font-size: 0.8rem;
+  }
+  p {
+    font-size: 0.6rem;
+  }
+
+  .container-fluid {
+    padding: 0.5rem 0.5rem;
+  }
+
 }

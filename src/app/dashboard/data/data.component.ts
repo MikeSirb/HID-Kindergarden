@@ -19,7 +19,6 @@ export class DataComponent implements OnInit, AfterViewInit {
 
     pageSizeOptions: number[] = [2, 5, 10, 15];
     removingChildId: string = "";
-    dataSource!: any;
 
 
     constructor(public storeService: StoreService, private backendService: BackendService,
@@ -27,16 +26,13 @@ export class DataComponent implements OnInit, AfterViewInit {
     }
 
     ngOnInit(): void {
-
         this.paginator._intl.itemsPerPageLabel = "Kinder pro Seite: ";
     }
 
     ngAfterViewInit() {
         this.storeService.sort = this.sort;
-        console.log(this.sort);
         this.backendService.getChildren().subscribe(() => {
         })
-
     }
 
 

@@ -1,3 +1,31 @@
 button {
-  width: 100%;
+  width: fit-content;
+  font-size: 1.2rem;
+  padding: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+
+  button {
+    font-size: 1rem;
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  button {
+    font-size: 0.8rem;
+    padding: 1rem;
+  }
+}
+
+
+@media (max-width: 576px) {
+
+  button {
+    font-size: 0.8rem;
+    padding: 1rem;
+  }
+
 }

@@ -1,11 +1,14 @@
 <div class="container-fluid" id="dashboard-container">
+  <div class="row m-0 p-0">
+    <app-kindergarden-info></app-kindergarden-info>
+  </div>
   <div class="row mb-3 mx-0">
     <app-filter-bar class="p-0"></app-filter-bar>
   </div>
   <div class="row">
     <app-data></app-data>
   </div>
-  <div class="row mt-3 mb-3">
+  <div class="row mt-3 mb-3 text-center">
     <app-button (toggleForms)="changeVisibility($event)" [status]="isActive"></app-button>
   </div>
   <div class="row justify-content-center" *ngIf="isActive">

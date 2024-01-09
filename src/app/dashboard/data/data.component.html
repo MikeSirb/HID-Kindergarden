@@ -1,5 +1,6 @@
-<table mat-table [dataSource]="storeService.childrenSort" matSort (matSortChange)="onSortChange($event)"
-       class="mat-elevation-z8">
+<table mat-table mat-table-horizontal-scroll [dataSource]="storeService.childrenSort"
+       matSort (matSortChange)="onSortChange($event)"
+       class="mat-elevation-z8 table-responsive">
 
     <ng-container matColumnDef="position">
         <th mat-header-cell *matHeaderCellDef> No.</th>

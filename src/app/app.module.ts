@@ -26,10 +26,11 @@ import {MatIconModule} from "@angular/material/icon";
 import {AboutPageComponent} from "./about-page/about-page.component";
 import {LoadingSpinnerComponent} from './loading-spinner/loading-spinner.component';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
-import { FilterBarComponent } from './dashboard/filter-bar/filter-bar.component';
+import {FilterBarComponent} from './dashboard/filter-bar/filter-bar.component';
 import {MatSortModule} from "@angular/material/sort";
-import { KindergardensComponent } from './kindergardens/kindergardens.component';
-import { TestComponent } from './test/test.component';
+import {KindergardensComponent} from './kindergardens/kindergardens.component';
+import { FooterComponent } from './footer/footer.component';
+import { KindergardenInfoComponent } from './dashboard/kindergarden-info/kindergarden-info.component';
 
 @NgModule({
   declarations: [
@@ -46,30 +47,31 @@ import { TestComponent } from './test/test.component';
     LoadingSpinnerComponent,
     FilterBarComponent,
     KindergardensComponent,
-    TestComponent
+    FooterComponent,
+    KindergardenInfoComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        FormsModule,
-        ReactiveFormsModule,
-        BrowserAnimationsModule,
-        // Angular Material
-        MatFormFieldModule,
-        MatInputModule,
-        MatSelectModule,
-        MatDatepickerModule,
-        MatNativeDateModule,
-        MatButtonModule,
-        MatDividerModule,
-        MatTableModule,
-        MatToolbarModule,
-        MatPaginatorModule,
-        MatIconModule,
-        MatProgressSpinnerModule,
-        MatSortModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    // Angular Material
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatTableModule,
+    MatToolbarModule,
+    MatPaginatorModule,
+    MatIconModule,
+    MatProgressSpinnerModule,
+    MatSortModule
+  ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'en-GB',},
   ],

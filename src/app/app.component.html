@@ -3,7 +3,11 @@
     <app-loading-spinner></app-loading-spinner>
   </div>
 </div>
+
 <app-header></app-header>
 <router-outlet></router-outlet>
+<div class="row m-0" style="height: 4rem"></div>
+<app-footer class="fixed-bottom"></app-footer>
+
 <app-alert [title]="alertService.title"
            [message]="alertService.message" *ngIf="alertService.displayAlert"></app-alert>
