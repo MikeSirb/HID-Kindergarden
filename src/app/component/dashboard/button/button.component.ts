@@ -7,7 +7,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 })
 
 export class ButtonComponent {
-  @Output() toggleForms = new EventEmitter();
+  @Output() toggleForms: EventEmitter<any> = new EventEmitter();
   @Input() status!: boolean;
   public statusText: string = "Öffnen"
   public statusColor: string = "accent";

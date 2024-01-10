@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, OnDestroy, Output} from "@angular/core";
-import {AlertService} from "../alert.service";
+import {Component, Input} from "@angular/core";
+import {AlertService} from "../../services/alert.service";
 
 @Component({
   selector: 'app-alert',
@@ -11,7 +11,8 @@ export class AlertComponent {
   @Input() message!: string;
   @Input() title!: string;
 
-  constructor(public alertService: AlertService) {}
+  constructor(public alertService: AlertService) {
+  }
 
   closeModal() {
     this.alertService.displayAlert = false;

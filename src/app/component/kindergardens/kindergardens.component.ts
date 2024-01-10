@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {StoreService} from "../shared/store.service";
+import {StoreService} from "../../services/store.service";
 
 @Component({
     selector: 'app-kindergardens',

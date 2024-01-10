@@ -1,0 +1,75 @@
+<table mat-table mat-table-horizontal-scroll [dataSource]="storeService.childrenSort"
+       matSort (matSortChange)="onSortChange($event)"
+       class="mat-elevation-z8 table-responsive">
+
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef> No.</th>
+    <td mat-cell
+        *matCellDef="let child; let i = index">{{i + 1 + configService.getCurrentPage() * configService.getChildrenPerPage() }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Name</th>
+    <td mat-cell *matCellDef="let child"> {{child.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="kindergardenName">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Kindergarten</th>
+    <td mat-cell *matCellDef="let child"> {{child.kindergardenName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="address">
+    <th mat-header-cell *matHeaderCellDef> Adresse</th>
+    <td mat-cell *matCellDef="let child"> {{child.kindergarden.address}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="age">
+    <th mat-header-cell *matHeaderCellDef>Alter</th>
+    <td mat-cell *matCellDef="let child ">{{ getAge(child.birthDate) }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="birthdate">
+    <th mat-header-cell *matHeaderCellDef>Geburtsdatum</th>
+    <td mat-cell *matCellDef="let child">{{ child.birthDate | date:'dd.MM.yyyy'}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="enrollmentDate">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Anmeldedatum</th>
+    <td mat-cell *matCellDef="let child">{{ child.enrollmentDate | date:'dd.MM.yyyy'}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Abmeldung</th>
+    <td mat-cell *matCellDef="let child">
+
+      <div class="actions-container"
+           *ngIf="storeService.isRemoving && (child.id == removingChildId); else elseBlock">
+        <app-loading-spinner></app-loading-spinner>
+      </div>
+      <ng-template #elseBlock>
+        <div class="actions-container">
+          <button mat-button (click)="cancelRegistration(child)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </ng-template>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row
+      *matHeaderRowDef="['position' ,'name', 'kindergardenName', 'address', 'age', 'birthdate', 'enrollmentDate', 'actions']"></tr>
+  <tr mat-row
+      *matRowDef="let row; columns: ['position', 'name', 'kindergardenName', 'address', 'age', 'birthdate', 'enrollmentDate', 'actions']"></tr>
+</table>
+
+<mat-paginator #paginator
+               class="mat-elevation-z8"
+               (page)="handlePageEvent($event)"
+               [pageSize]="configService.getChildrenPerPage()"
+               [pageIndex]="configService.getCurrentPage()"
+               [length]="storeService.childrenTotalCount"
+               [pageSizeOptions]="pageSizeOptions"
+               [showFirstLastButtons]="true"
+               aria-label="Select page">
+</mat-paginator>
+

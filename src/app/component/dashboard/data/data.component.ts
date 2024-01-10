@@ -1,10 +1,10 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {BackendService} from 'src/app/shared/backend.service';
-import {StoreService} from 'src/app/shared/store.service';
+import {BackendService} from 'src/app/services/backend.service';
+import {StoreService} from 'src/app/services/store.service';
 import {MatPaginator, PageEvent} from "@angular/material/paginator";
-import {ConfigService} from "../../shared/config.service";
-import {Child} from "../../shared/interfaces/Child";
-import {AlertService} from "../../shared/alert.service";
+import {ConfigService} from "../../../services/config.service";
+import {Child} from "../../../interfaces/Child";
+import {AlertService} from "../../../services/alert.service";
 import {MatSort, Sort} from "@angular/material/sort";
 
 @Component({
@@ -31,8 +31,8 @@ export class DataComponent implements OnInit, AfterViewInit {
 
     ngAfterViewInit() {
         this.storeService.sort = this.sort;
-        this.backendService.getChildren().subscribe(() => {
-        })
+      this.backendService.getChildren().subscribe(() => {
+      })
     }
 
 
@@ -51,7 +51,7 @@ export class DataComponent implements OnInit, AfterViewInit {
         this.configService.setChildrenPerPage(event.pageSize);
         this.configService.setCurrentPage(event.pageIndex);
 
-        this.storeService.isLoading = true;
+        this.storeService.childrensAreLoading = true;
 
         this.backendService.getChildren().subscribe(() => {
         })
@@ -69,8 +69,8 @@ export class DataComponent implements OnInit, AfterViewInit {
     }
 
 
-    onSortChange($event: Sort) {
-        console.log(this.sort);
+    onSortChange(event: Sort) {
+        console.log(event);
     }
 }
 

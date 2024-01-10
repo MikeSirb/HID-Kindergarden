@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
-import {StoreService} from "../shared/store.service";
-import {ConfigService} from "../shared/config.service";
+import {StoreService} from "../../services/store.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -8,11 +7,10 @@ import {ConfigService} from "../shared/config.service";
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-  public isActive: boolean  = false;
+  public isActive: boolean = false;
 
   constructor(private storeService: StoreService) {
-    this.storeService.isLoading = true;
-
+    this.storeService.childrensAreLoading = true;
   }
 
   changeVisibility(status: boolean) {

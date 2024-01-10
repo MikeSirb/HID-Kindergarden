@@ -27,7 +27,7 @@ button {
   text-align: center;
 }
 
-.spinner-container {
+.actions-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,8 +47,8 @@ th, td {
     font-size: 0.9rem;
   }
 
-  mat-paginator{
-    font-size:0.8rem;
+  mat-paginator {
+    font-size: 0.8rem;
   }
 
   .table-responsive {
@@ -74,8 +74,8 @@ th, td {
     font-size: 0.7rem;
   }
 
-  mat-paginator{
-    font-size:0.6rem;
+  mat-paginator {
+    font-size: 0.6rem;
   }
 
 }

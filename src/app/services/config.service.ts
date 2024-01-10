@@ -9,7 +9,7 @@ export class ConfigService {
   private currentPage: number = 0;
   private filterStatus: boolean = false;
   private filter: string = "";
-  private bigSize:number = 200;
+  private bigSize:number = 150;
   private smallSize: number = 30;
   private spinnerSize: number = this.bigSize;
 

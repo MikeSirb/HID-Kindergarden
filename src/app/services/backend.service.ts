@@ -1,8 +1,8 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {Kindergarden} from './interfaces/Kindergarden';
+import {Kindergarden} from '../interfaces/Kindergarden';
 import {StoreService} from './store.service';
-import {Child, ChildResponse} from './interfaces/Child';
+import {Child, ChildResponse} from '../interfaces/Child';
 import {ConfigService} from './config.service';
 import {AlertService} from "./alert.service";
 import {catchError, map, of} from "rxjs";
@@ -24,6 +24,7 @@ export class BackendService {
       .subscribe(
         data => {
           this.storeService.kindergardens = data;
+          this.storeService.kindergardenAreLoading = false;
         },
         error => {
           console.error('Fehler beim Laden der Kindergärten:', error);
@@ -56,7 +57,7 @@ export class BackendService {
         this.storeService.children = modifiedChildren;
         this.storeService.childrenTotalCount = Number(data.headers.get('X-Total-Count'));
 
-        this.storeService.isLoading = false;
+        this.storeService.childrensAreLoading = false;
         this.storeService.isRemoving = false;
 
         this.storeService.childrenSort = new MatTableDataSource(this.storeService.children);
@@ -66,7 +67,7 @@ export class BackendService {
       }),
       catchError(error => {
         console.error('Fehler beim Laden der Kinder:', error);
-        this.storeService.isLoading = false;
+        this.storeService.childrensAreLoading = false;
         this.storeService.isRemoving = false;
 
         const errorTitle: string = `Fehler beim Laden`;
@@ -100,7 +101,7 @@ export class BackendService {
 
         this.alertService.changeTitleAndMessage(errorTitle, errorMessage, this.colorError);
         this.alertService.displayAlert = true;
-        this.storeService.isLoading = false;
+        this.storeService.childrensAreLoading = false;
       }
     );
   }

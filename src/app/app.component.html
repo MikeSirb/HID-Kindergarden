@@ -1,4 +1,4 @@
-<div id="view" *ngIf="storeService.isLoading">
+<div id="view" *ngIf="storeService.childrensAreLoading || storeService.kindergardenAreLoading">
   <div class="spinner">
     <app-loading-spinner></app-loading-spinner>
   </div>

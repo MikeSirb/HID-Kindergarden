@@ -4,12 +4,12 @@ import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {DashboardComponent} from './dashboard/dashboard.component';
-import {DataComponent} from './dashboard/data/data.component';
-import {AddDataComponent} from './dashboard/add-data/add-data.component';
-import {HeaderComponent} from './header/header.component';
-import {ButtonComponent} from './dashboard/button/button.component';
-import {PaginationPipe} from './dashboard/data/pagination.pipe';
+import {DashboardComponent} from './component/dashboard/dashboard.component';
+import {DataComponent} from './component/dashboard/data/data.component';
+import {AddDataComponent} from './component/dashboard/add-data/add-data.component';
+import {HeaderComponent} from './component/header/header.component';
+import {ButtonComponent} from './component/dashboard/button/button.component';
+import {PaginationPipe} from './component/dashboard/data/pagination.pipe';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSelectModule} from "@angular/material/select";
 import {MatInputModule} from "@angular/material/input";
@@ -23,13 +23,13 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {AlertComponent} from "./shared/alert/alert.component";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
-import {LoadingSpinnerComponent} from './loading-spinner/loading-spinner.component';
+import {LoadingSpinnerComponent} from './shared/loading-spinner/loading-spinner.component';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
-import {FilterBarComponent} from './dashboard/filter-bar/filter-bar.component';
+import {FilterBarComponent} from './component/dashboard/filter-bar/filter-bar.component';
 import {MatSortModule} from "@angular/material/sort";
-import {KindergardensComponent} from './kindergardens/kindergardens.component';
-import {FooterComponent} from './footer/footer.component';
-import {KindergardenInfoComponent} from './dashboard/kindergarden-info/kindergarden-info.component';
+import {KindergardensComponent} from './component/kindergardens/kindergardens.component';
+import {FooterComponent} from './component/footer/footer.component';
+import {KindergardenInfoComponent} from './component/dashboard/kindergarden-info/kindergarden-info.component';
 
 @NgModule({
   declarations: [

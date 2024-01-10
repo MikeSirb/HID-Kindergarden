@@ -1,12 +1,10 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
-import {BackendService} from 'src/app/shared/backend.service';
-import {StoreService} from 'src/app/shared/store.service';
+import {BackendService} from 'src/app/services/backend.service';
+import {StoreService} from 'src/app/services/store.service';
 import {CustomErrorStateMatcher} from "./custom-state-matcher";
 import {ErrorStateMatcher} from "@angular/material/core";
-import {AlertService} from "../../shared/alert.service";
-import {Child} from "../../shared/interfaces/Child";
-import {ConfigService} from "../../shared/config.service";
+import {AlertService} from "../../../services/alert.service";
 
 @Component({
   selector: 'app-add-data',
@@ -20,9 +18,9 @@ export class AddDataComponent implements OnInit {
 
   public addChildForm: any;
 
-  minAge: number = 3;
-  maxAge: number = 5;
-  datePickerDate!: Date;
+  public minAge: number = 3;
+  public maxAge: number = 5;
+  public datePickerDate!: Date;
 
   constructor(private formbuilder: FormBuilder, public storeService: StoreService,
               public backendService: BackendService, public alertService: AlertService) {
@@ -41,11 +39,11 @@ export class AddDataComponent implements OnInit {
   onSubmit() {
     if (this.addChildForm.valid) {
       const transformedName = this.transformName(this.addChildForm.value.name);
-      this.addChildForm.patchValue({ name: transformedName });
+      this.addChildForm.patchValue({name: transformedName});
 
       const currentDate: Date = new Date();
       console.log(currentDate);
-      this.storeService.isLoading = true;
+      this.storeService.childrensAreLoading = true;
       this.backendService.addChildData(this.addChildForm.value, currentDate);
 
 
@@ -54,6 +52,8 @@ export class AddDataComponent implements OnInit {
       setTimeout(() => {
         this.alertService.displayAlert = false;
       }, 10000);
+    }else {
+      console.error(`Invalid add child form value: ${this.addChildForm.value}`);
     }
   }
 
@@ -91,7 +91,7 @@ export class AddDataComponent implements OnInit {
 
   getDatePickerDate() {
     const currentDate = new Date();
-    const threeYearsAgo = new Date(currentDate);
+    let threeYearsAgo = new Date(currentDate);
     threeYearsAgo.setFullYear(currentDate.getFullYear() - 3);
 
     return threeYearsAgo;
