@@ -30,7 +30,7 @@ export class AddDataComponent implements OnInit {
 
   ngOnInit(): void {
     this.addChildForm = this.formbuilder.group({
-      name: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]+ [a-zA-Z]+$/)]],
+      name: ['', [Validators.required, Validators.pattern(/^[a-zA-Zß]+ [a-zA-Zß]+$/)]],
       kindergardenId: ['', Validators.required],
       birthDate: [null, [Validators.required, this.checkTheAge.bind(this)]]
     })

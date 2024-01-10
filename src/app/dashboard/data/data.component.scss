@@ -1,21 +1,7 @@
 .table-responsive {
-  display: block;
   width: 100%;
   overflow-x: auto;
-}
-
-mat-table {
-  width: 1200px;
-  max-width: 1200px;
-  margin-bottom: 1rem;
-  display: table;
-  border-collapse: collapse;
-  margin: 0px;
-}
-
-mat-row,
-mat-header-row {
-  display: table-row;
+  margin-bottom: 0.1rem;
 }
 
 mat-cell,
@@ -29,6 +15,7 @@ mat-header-cell {
   overflow: hidden;
   vertical-align: middle;
 }
+
 
 button {
   text-align: left;
@@ -62,6 +49,12 @@ th, td {
 
   mat-paginator{
     font-size:0.8rem;
+  }
+
+  .table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
   }
 
 }

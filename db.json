@@ -139,6 +139,20 @@
       "birthDate": "2021-01-03T23:00:00.000Z",
       "enrollmentDate": "2024-01-08T10:31:05.435Z",
       "id": "gzrq2qo"
+    },
+    {
+      "name": "Jasmin Weissenberger",
+      "kindergardenId": 5,
+      "birthDate": "2021-01-05T23:00:00.000Z",
+      "enrollmentDate": "2024-01-09T21:27:43.938Z",
+      "id": "ZOpPwdo"
+    },
+    {
+      "name": "Joe Rogan",
+      "kindergardenId": 4,
+      "birthDate": "2021-01-04T23:00:00.000Z",
+      "enrollmentDate": "2024-01-10T07:09:43.994Z",
+      "id": "XDGRaTU"
     }
   ],
   "kindergardens": [
